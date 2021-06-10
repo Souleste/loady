@@ -1,3 +1,23 @@
+/* color reference */
+/*
+:root {
+	--primary: #34495e;
+	--black: #000000;
+	--gray: #95a5a6;
+	--blue: #007bff;
+	--lite-blue: #71bbff;
+	--purple: #6f42c1;
+	--pink: #e83e8c;
+	--red: #dc3545;
+	--orange: #fd7e14;
+	--yellow: #ffc107;
+	--green: #28a745;
+	--teal: #20c997;
+	--cyan: #17a2b8;
+	--white: #ffffff;
+}
+*/
+
 .loady-container {
 	position: relative;
 	width: fit-content;
@@ -5,7 +25,7 @@
 }
 
 .loady { position: relative; }
-.loady.cancel::before, .loady.cancel::after { animation-name: none !important; }
+.loady.cancel::before, .loady.cancel::after { opacity: 0; }
 
 .loady::before,
 .loady::after {
@@ -58,6 +78,7 @@
 	background-position: right 0 center;
 }
 
+/* button styles */
 button.loady-container {
 	display: flex;
 	align-items: center;
