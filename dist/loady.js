@@ -12,19 +12,12 @@
 			animation: "spin",
 			color: "black",
 			dir: null,
-			width: {
-				element: null,
-				container: null,
-				loader: null,
-			},
-			height: {
+			classes: {
 				element: null,
 				container: null,
 				loader: null
 			},
-			create: function() {
-				this.load();
-			},
+			create: function() { this.load(); },
 			load: function() {},
 			stop: function() {}
 		};
@@ -85,14 +78,11 @@
 
 				loader.classList.add("loady");
 
-				if (Loady.options.width.element) element.style.width = Loady.options.width.element + "px";
-				if (Loady.options.width.container) cont.style.width = Loady.options.width.container + "px";
-				if (Loady.options.width.loader) loader.style.width = Loady.options.width.loader + "px";
+				if (Loady.options.classes.container && Loady.display.container) Loady.options.classes.container.split(',').forEach(function(o) { Loady.display.container.classList.add(o) });
+				if (Loady.options.classes.element) Loady.options.classes.element.split(',').forEach(function(o) { Loady.display.element.classList.add(o) });
+				if (Loady.options.classes.loader) Loady.options.classes.loader.split(',').forEach(function(o) { Loady.display.loader.classList.add(o) });
 
-				if (Loady.options.height.element) element.style.height = Loady.options.height.element + "px";
-				if (Loady.options.height.container) cont.style.height = Loady.options.height.container + "px";
-				if (Loady.options.height.loader) loader.style.height = Loady.options.height.loader + "px";
-
+				/* set attributes */
 				if (Loady.options.size)
 					loader.setAttribute("data-size", Loady.options.size);
 				if (Loady.options.speed)
