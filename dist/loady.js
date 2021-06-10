@@ -23,7 +23,7 @@
 				loader: null
 			},
 			create: function() {
-				loady.load();
+				this.load();
 			},
 			load: function() {},
 			stop: function() {}
