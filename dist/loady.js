@@ -73,7 +73,7 @@
 							cont.appendChild(loader);
 							break;
 						case "BUTTON":
-							element.classList.add('loady-container');
+							element.classList.add("loady-container");
 							element.appendChild(loader);
 							cont = element;
 							break;
@@ -83,15 +83,15 @@
 					Loady.display.loader = loader;
 				}
 
-				loader.classList.add('loady');
+				loader.classList.add("loady");
 
-				if (Loady.options.width.element) element.style.width = Loady.options.width.element + 'px';
-				if (Loady.options.width.container) cont.style.width = Loady.options.width.container + 'px';
-				if (Loady.options.width.loader) loader.style.width = Loady.options.width.loader + 'px';
+				if (Loady.options.width.element) element.style.width = Loady.options.width.element + "px";
+				if (Loady.options.width.container) cont.style.width = Loady.options.width.container + "px";
+				if (Loady.options.width.loader) loader.style.width = Loady.options.width.loader + "px";
 
-				if (Loady.options.height.element) element.style.height = Loady.options.height.element + 'px';
-				if (Loady.options.height.container) cont.style.height = Loady.options.height.container + 'px';
-				if (Loady.options.height.loader) loader.style.height = Loady.options.height.loader + 'px';
+				if (Loady.options.height.element) element.style.height = Loady.options.height.element + "px";
+				if (Loady.options.height.container) cont.style.height = Loady.options.height.container + "px";
+				if (Loady.options.height.loader) loader.style.height = Loady.options.height.loader + "px";
 
 				if (Loady.options.size)
 					loader.setAttribute("data-size", Loady.options.size);
