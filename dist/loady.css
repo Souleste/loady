@@ -32,13 +32,13 @@
 	content: "";
 	position: absolute;
 	top: 0;
-	right: 0;
-	bottom: 0;
+	right: -1px;
+	bottom: -1px;
 	left: 0;
+	background-repeat: no-repeat;
 }
 
 .loady::after {
-	background-repeat: no-repeat;
 	animation-duration: 1s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
