@@ -21,7 +21,12 @@
 				element: null,
 				container: null,
 				loader: null
-			}
+			},
+			create: function() {
+				loady.load();
+			},
+			load: function() {},
+			stop: function() {}
 		};
 
 		var colors = {
@@ -48,7 +53,8 @@
 				};
 				this.options = o;
 				construct(this);
-				this.load();
+
+				this.options.create.call(this);
 			}
 
 			var construct = function (Loady) {
@@ -76,13 +82,13 @@
 					if (cont !== undefined) Loady.display.container = cont;
 					Loady.display.loader = loader;
 				}
-				
+
 				loader.classList.add('loady');
-				
+
 				if (Loady.options.width.element) element.style.width = Loady.options.width.element + 'px';
 				if (Loady.options.width.container) cont.style.width = Loady.options.width.container + 'px';
 				if (Loady.options.width.loader) loader.style.width = Loady.options.width.loader + 'px';
-				
+
 				if (Loady.options.height.element) element.style.height = Loady.options.height.element + 'px';
 				if (Loady.options.height.container) cont.style.height = Loady.options.height.container + 'px';
 				if (Loady.options.height.loader) loader.style.height = Loady.options.height.loader + 'px';
@@ -101,10 +107,12 @@
 
 			Loady.prototype.load = function () {
 				this.display.loader.classList.remove("cancel");
+				this.options.load.call(this);
 			};
 
 			Loady.prototype.stop = function () {
 				this.display.loader.classList.add("cancel");
+				this.options.stop.call(this);
 			};
 
 			return Loady;
