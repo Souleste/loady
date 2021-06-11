@@ -11,7 +11,7 @@
 			speed: null,
 			animation: 'spin',
 			color: 'black',
-			phColor: 'black',
+			phColor: 'rgba(0,0,0,0.1)',
 			dir: null,
 			placeholder: true,
 			classes: {
