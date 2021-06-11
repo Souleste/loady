@@ -1,6 +1,6 @@
 /* loady spin */
 
-.loady[data-animation="spin"] .loady-path-1 {
+.loady[data-animation="spin"] circle.loady-path-1 {
 	animation-name: loady-spin;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
@@ -9,12 +9,12 @@
 }
 
 /* speed */
-.loady[data-animation="spin"][data-speed="0.5"] { animation-duration: 0.5s }
-.loady[data-animation="spin"][data-speed="1"] { animation-duration: 1s }
-.loady[data-animation="spin"][data-speed="1.5"] { animation-duration: 1.5s }
-.loady[data-animation="spin"][data-speed="2"] { animation-duration: 2s }
-.loady[data-animation="spin"][data-speed="2.5"] { animation-duration: 2.5s }
-.loady[data-animation="spin"][data-speed="3"] { animation-duration: 3s }
+.loady[data-animation="spin"][data-speed="0.5"] circle.loady-path-1 { animation-duration: 0.5s }
+.loady[data-animation="spin"][data-speed="1"] circle.loady-path-1 { animation-duration: 1s }
+.loady[data-animation="spin"][data-speed="1.5"] circle.loady-path-1 { animation-duration: 1.5s }
+.loady[data-animation="spin"][data-speed="2"] circle.loady-path-1 { animation-duration: 2s }
+.loady[data-animation="spin"][data-speed="2.5"] circle.loady-path-1 { animation-duration: 2.5s }
+.loady[data-animation="spin"][data-speed="3"] circle.loady-path-1 { animation-duration: 3s }
 
 /* keyframes */
 @keyframes loady-spin {
