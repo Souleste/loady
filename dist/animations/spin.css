@@ -4,8 +4,8 @@
 	animation-name: loady-spin;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
+	transform: rotate(-90);
 	transform-origin: 50% 50%;
-	transform: rotate(0);
 }
 .loady.paused[data-animation="spin"] circle.loady-path-1 { animation-play-state: paused }
 
@@ -19,5 +19,5 @@
 
 /* keyframes */
 @keyframes loady-spin {
-	100% { transform: rotate(360deg); }
+	100% { transform: rotate(270deg); }
 }
