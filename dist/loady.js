@@ -18,27 +18,27 @@
 
 	var Loady = function (element) {
 		var settings = {
-			size: element.getAttribute("data-size") ?? "",
-			speed: element.getAttribute("data-speed") ?? "1",
-			animation: element.getAttribute("data-animation") ?? "spin",
-			color: element.getAttribute("data-color") ?? "black",
-			phColor: element.getAttribute("data-placeholderColor") ?? "rgba(0,0,0,0.1)",
-			direction: element.getAttribute("data-dir") ?? ""
+			size: element.getAttribute("data-size") ? element.getAttribute("data-size") : "",
+			speed: element.getAttribute("data-speed") ? element.getAttribute("data-speed") : "1",
+			animation: element.getAttribute("data-animation") ? element.getAttribute("data-animation") : "spin",
+			color: element.getAttribute("data-color") ? element.getAttribute("data-color") : "black",
+			phColor: element.getAttribute("data-placeholderColor") ? element.getAttribute("data-placeholderColor") : "rgba(0,0,0,0.1)",
+			direction: element.getAttribute("data-dir") ? element.getAttribute("data-dir") : ""
 		};
 
 		var html = "";
 		var params = {
-			strokeWidth:
-				settings.size == "thicc" ? 15 : settings.size == "thin" ? 5 : 10,
-			strokeColor: colors[settings.color] ?? settings.color,
+			strokeWidth: settings.size == "thicc" ? 15 : settings.size == "thin" ? 5 : 10,
+			strokeColor: colors[settings.color] ? colors[settings.color] : settings.color,
 			phColor: settings.phColor,
-			radius: settings.size == "thicc" ? 40 : 45
 		};
 		switch (settings.animation) {
 			case "snake":
+				params.radius = settings.size == "thicc" ? 40 : 45;
 				html = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%" stroke-width="'+params.strokeWidth+'"><circle class="loady-placeholder" cx="50" cy="50" r="'+params.radius+'" fill="none" stroke="'+params.phColor+'"></circle><circle class="loady-path-1" cx="50" cy="50" r="'+params.radius+'" fill="none" stroke="'+params.strokeColor+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="285" stroke-dashoffset="286"></circle></svg>';
 				break;
 			case "spin":
+				params.radius = settings.size == "thicc" ? 40 : 45;
 				html = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%" stroke-width="'+params.strokeWidth+'"><circle class="loady-placeholder" cx="50" cy="50" r="'+params.radius+'" fill="none" stroke="'+params.phColor+'"></circle><circle class="loady-path-1" cx="50" cy="50" r="'+params.radius+'" fill="none" stroke="'+params.strokeColor+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="120" stroke-dashoffset="120"></circle></svg>';
 				break;
 			case "three-spin":
@@ -86,7 +86,7 @@
 		Loady(element);
 	});
 
-	/* detect new .loady elements */
+	/* detect new loady elements */
 	const bodyObserver = new MutationObserver(function (mutationsList, observer) {
 		for (const mutation of mutationsList) {
 			if (mutation.type == "childList") {
