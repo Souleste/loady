@@ -8,7 +8,7 @@
 
 		var settings = {
 			size: null,
-			speed: null,
+			speed: '1',
 			animation: 'spin',
 			color: 'black',
 			phColor: 'rgba(0,0,0,0.1)',
