@@ -1,6 +1,6 @@
 /* loady snake */
 
-.loady[data-animation="snake] svg {
+.loady[data-animation="snake"] svg {
 	animation-name: loady-snake-spin;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
