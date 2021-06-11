@@ -62,17 +62,10 @@
 			mutationsList,
 			observer
 		) {
-			for (const mutation of mutationsList) {
+			for (let idx in mutationsList) {
+				var mutation = mutationsList[idx];
 				if (mutation.type == "attributes") {
-					if (
-						[
-							"data-animation",
-							"data-color",
-							"data-dir",
-							"data-size",
-							"data-speed"
-						].indexOf(mutation.attributeName) > -1
-					) {
+					if (["data-animation", "data-color", "data-dir", "data-size", "data-speed"].indexOf(mutation.attributeName) > -1) {
 						loadyObserver.disconnect();
 						Loady(element);
 					}
@@ -88,17 +81,15 @@
 
 	/* detect new loady elements */
 	const bodyObserver = new MutationObserver(function (mutationsList, observer) {
-		for (const mutation of mutationsList) {
+		for (let idx in mutationsList) {
+			var mutation = mutationsList[idx];
 			if (mutation.type == "childList") {
-				var added = Array.prototype.slice
-					.call(mutation.addedNodes)
-					.filter(function (o) {
-						if (o.nodeName == "#text") return;
-						return o.classList.contains("loady");
-					})
-					.forEach(function (o) {
-						Loady(o);
-					});
+				var added = Array.prototype.slice.call(mutation.addedNodes).filter(function (o) {
+					if (o.nodeName == "#text") return;
+					return o.classList.contains("loady");
+				}).forEach(function (o) {
+					Loady(o);
+				});
 			}
 		}
 	});
