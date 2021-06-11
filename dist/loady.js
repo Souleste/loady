@@ -36,36 +36,16 @@
 		};
 		switch (settings.animation) {
 			case "snake":
-				html =
-					'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%"><circle class="loady-placeholder" cx="50" cy="50" r="' +
-					params.radius +
-					'" fill="none" stroke="' +
-					params.phColor +
-					'" stroke-width="' +
-					params.strokeWidth +
-					'"></circle><circle class="loady-path-1" cx="50" cy="50" r="' +
-					params.radius +
-					'" fill="none" stroke="' +
-					params.strokeColor +
-					'" stroke-width="' +
-					params.strokeWidth +
-					'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="285" stroke-dashoffset="285" transform="rotate(-90 50 50)"></circle></svg>';
+				html = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%" stroke-width="'+params.strokeWidth+'"><circle class="loady-placeholder" cx="50" cy="50" r="'+params.radius+'" fill="none" stroke="'+params.phColor+'"></circle><circle class="loady-path-1" cx="50" cy="50" r="'+params.radius+'" fill="none" stroke="'+params.strokeColor+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="285" stroke-dashoffset="286"></circle></svg>';
 				break;
 			case "spin":
-				html =
-					'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%"><circle class="loady-placeholder" cx="50" cy="50" r="' +
-					params.radius +
-					'" fill="none" stroke="' +
-					params.phColor +
-					'" stroke-width="' +
-					params.strokeWidth +
-					'"></circle><circle class="loady-path-1" cx="50" cy="50" r="' +
-					params.radius +
-					'" fill="none" stroke="' +
-					params.strokeColor +
-					'" stroke-width="' +
-					params.strokeWidth +
-					'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="120" stroke-dashoffset="120" transform="rotate(-90 50 50)"></circle></svg>';
+				html = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%" stroke-width="'+params.strokeWidth+'"><circle class="loady-placeholder" cx="50" cy="50" r="'+params.radius+'" fill="none" stroke="'+params.phColor+'"></circle><circle class="loady-path-1" cx="50" cy="50" r="'+params.radius+'" fill="none" stroke="'+params.strokeColor+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="120" stroke-dashoffset="120"></circle></svg>';
+				break;
+			case "three-spin":
+				params.rad1 = settings.size == "thicc" ? 40 : 45;
+				params.rad2 = settings.size == "thicc" ? 25 : 30;
+				params.rad3 = settings.size == "thicc" ? 10 : 15;
+				html = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'"><circle class="loady-path-1" cx="50" cy="50" r="'+params.rad1+'" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="286" stroke-dashoffset="71.5"></circle><circle class="loady-path-2" cx="50" cy="50" r="'+params.rad2+'" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="200" stroke-dashoffset="105"></circle><circle class="loady-path-3" cx="50" cy="50" r="'+params.rad3+'" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="100" stroke-dashoffset="75"></circle></svg>'
 				break;
 		}
 		element.innerHTML = html;
