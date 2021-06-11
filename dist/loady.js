@@ -47,6 +47,12 @@
 				params.rad3 = settings.size == "thicc" ? 10 : 15;
 				html = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'"><circle class="loady-path-1" cx="50" cy="50" r="'+params.rad1+'" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="286" stroke-dashoffset="71.5"></circle><circle class="loady-path-2" cx="50" cy="50" r="'+params.rad2+'" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="200" stroke-dashoffset="105"></circle><circle class="loady-path-3" cx="50" cy="50" r="'+params.rad3+'" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="100" stroke-dashoffset="75"></circle></svg>'
 				break;
+			case "three-dot":
+				params.rad1 = settings.size == "thicc" ? 35 : 30;
+				params.rad2 = settings.size == "thicc" ? 25 : 20;
+				params.rad3 = settings.size == "thicc" ? 15 : 10;
+				html = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'"><circle class="loady-path-1" cx="10" cy="50" r="'+params.rad1+'" fill="'+params.strokeColor+'" stroke-linecap="round" stroke-linejoin="round"></circle><circle class="loady-path-2" cx="50" cy="50" r="'+params.rad2+'" fill="'+params.strokeColor+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="200" stroke-dashoffset="105"></circle><circle class="loady-path-3" cx="90" cy="50" r="'+params.rad3+'" fill="'+params.strokeColor+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="100" stroke-dashoffset="75"></circle></svg>'
+				break;
 		}
 		element.innerHTML = html;
 
