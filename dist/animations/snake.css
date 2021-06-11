@@ -1,0 +1,51 @@
+/* loady snake */
+
+.loady[data-animation="snake] svg {
+	animation-name: loady-snake-spin;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	transform-origin: 50% 50%;
+	transform: rotate(0deg) scale(1, 1);
+}
+
+.loady[data-animation="snake"] circle.loady-path-1 {
+	animation-name: loady-snake;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+/* speed */
+.loady[data-animation="snake"][data-speed="0.5"] svg { animation-duration: 0.5s }
+.loady[data-animation="snake"][data-speed="1"] svg { animation-duration: 1s }
+.loady[data-animation="snake"][data-speed="1.5"] svg { animation-duration: 1.5s }
+.loady[data-animation="snake"][data-speed="2"] svg { animation-duration: 2s }
+.loady[data-animation="snake"][data-speed="2.5"] svg { animation-duration: 2.5s }
+.loady[data-animation="snake"][data-speed="3"] svg { animation-duration: 3s }
+
+.loady[data-animation="snake"][data-speed="0.5"] circle.loady-path-1 { animation-duration: 0.5s }
+.loady[data-animation="snake"][data-speed="1"] circle.loady-path-1 { animation-duration: 1s }
+.loady[data-animation="snake"][data-speed="1.5"] circle.loady-path-1 { animation-duration: 1.5s }
+.loady[data-animation="snake"][data-speed="2"] circle.loady-path-1 { animation-duration: 2s }
+.loady[data-animation="snake"][data-speed="2.5"] circle.loady-path-1 { animation-duration: 2.5s }
+.loady[data-animation="snake"][data-speed="3"] circle.loady-path-1 { animation-duration: 3s }
+
+/* keyframes */
+@keyframes loady-snake-spin {
+	49.9% {
+		transform: rotate(180deg) scale(1, 1);
+	}
+	50% {
+		transform: rotate(180deg) scale(-1, 1); /* IE doesn't support negative stroke-dashoffset so flip the svg */
+	}
+	100% {
+		transform: rotate(360deg) scale(-1, 1);
+	}
+}
+@keyframes loady-snake {
+	50% {
+		stroke-dashoffset: 0;
+	}
+	100% {
+		stroke-dashoffset: 286;
+	}
+}
