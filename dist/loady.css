@@ -25,43 +25,9 @@
 }
 
 .loady { position: relative; }
-.loady.cancel::before, .loady.cancel::after { opacity: 0; }
-
-.loady::before,
-.loady::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-repeat: no-repeat;
-}
-
-.loady::after {
-	animation-duration: 1s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-name: loady-spin;
-	transform-origin: 50% 50%;
-	transform: rotate(0) scale(1, 1);
-}
 
 /* direction */
-.loady[data-dir="counter"]::after { transform: scale(-1, 1); }
-
-/* speed */
-.loady[data-speed="0.5"]::after { animation-duration: 0.5s; }
-.loady[data-speed="1"]::after { animation-duration: 1s; }
-.loady[data-speed="1.5"]::after { animation-duration: 1.5s; }
-.loady[data-speed="2"]::after { animation-duration: 2s; }
-.loady[data-speed="2.5"]::after { animation-duration: 2.5s; }
-.loady[data-speed="3"]::after { animation-duration: 3s; }
-
-/* size */
-.loady::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100%25' height='100%25'%3E%3Ccircle class='circle-path' cx='50' cy='50' r='45' fill='none' stroke='rgba(0,0,0,0.1)' stroke-width='10' /%3E%3C/svg%3E"); }
-.loady[data-size="thin"]::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100%25' height='100%25'%3E%3Ccircle class='circle-path' cx='50' cy='50' r='45' fill='none' stroke='rgba(0,0,0,0.1)' stroke-width='5' /%3E%3C/svg%3E"); }
-.loady[data-size="thicc"]::before {	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100%25' height='100%25'%3E%3Ccircle class='circle-path' cx='50' cy='50' r='40' fill='none' stroke='rgba(0,0,0,0.1)' stroke-width='15' /%3E%3C/svg%3E"); }
+.loady[data-dir="counter"] { transform: scale(-1, 1); }
 
 /* input styles */
 .loady-container input[type="search"],
@@ -88,9 +54,4 @@ button .loady {
 	width: 20px;
 	height: 20px;
 	margin-left: 8px;
-}
-
-/* keyframes */
-@keyframes loady-spin {
-	100% { transform: rotate(360deg); }
 }
