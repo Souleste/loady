@@ -24,17 +24,16 @@
 	height: fit-content;
 }
 
-.loady { position: relative; }
+.loady { position: relative }
+.loady.paused svg { animation-play-state: paused }
 
 /* direction */
-.loady[data-dir="counter"] { transform: scale(-1, 1); }
+.loady[data-dir="counter"] { transform: scale(-1, 1) }
 
 /* input styles */
 .loady-container input[type="search"],
 .loady-container input[type="text"],
-.loady-container input[type=""] {
-	padding-right: 30px;
-}
+.loady-container input[type=""] { padding-right: 30px }
 .loady-container input ~ .loady {
 	width: 20px;
 	height: 20px;
