@@ -35,8 +35,7 @@
 		switch (settings.animation) {
 			case "snake":
 				params.radius = settings.size == "thicc" ? 40 : 45;
-				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-placeholder" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.phColor+'" stroke-width="'+params.strokeWidth+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="285" stroke-dashoffset="286"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg>
-				';
+				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-placeholder" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.phColor+'" stroke-width="'+params.strokeWidth+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="285" stroke-dashoffset="286"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg>';
 				break;
 			case "spin":
 				params.radius = settings.size == "thicc" ? 40 : 45;
