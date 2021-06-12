@@ -75,8 +75,8 @@
 				var mutation = mutationsList[idx];
 				if (mutation.type == "attributes") {
 					if (["data-animation", "data-color", "data-dir", "data-size", "data-speed"].indexOf(mutation.attributeName) > -1 || mutation.attributeName == 'style') {
-						if (element.loadyWidth !== element.offsetWidth) element.loadyWidth = element.offsetWidth;
-						if (element.loadyHeight !== element.offsetHeight) element.loadyHeight = element.offsetHeight;
+// 						if (element.loadyWidth !== element.offsetWidth) element.loadyWidth = element.offsetWidth;
+// 						if (element.loadyHeight !== element.offsetHeight) element.loadyHeight = element.offsetHeight;
 						console.log('ehh change');
 						loadyObserver.disconnect();
 						Loady(element);
