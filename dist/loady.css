@@ -26,6 +26,14 @@
 .loady { position: relative }
 .loady.paused svg { animation-play-state: paused }
 
+.loady svg {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
 /* direction */
 .loady[data-dir="counter"] { transform: scale(-1, 1) }
 
