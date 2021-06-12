@@ -25,6 +25,9 @@
 			phColor: element.getAttribute("data-placeholderColor") ? element.getAttribute("data-placeholderColor") : "rgba(0,0,0,0.1)",
 			direction: element.getAttribute("data-dir") ? element.getAttribute("data-dir") : ""
 		};
+		
+		element.loadyWidth = element.offsetWidth;
+		element.loadyHeight = element.offsetHeight;
 
 		var html = "";
 		var params = {
@@ -71,7 +74,10 @@
 			for (let idx in mutationsList) {
 				var mutation = mutationsList[idx];
 				if (mutation.type == "attributes") {
-					if (["data-animation", "data-color", "data-dir", "data-size", "data-speed"].indexOf(mutation.attributeName) > -1) {
+					if (["data-animation", "data-color", "data-dir", "data-size", "data-speed"].indexOf(mutation.attributeName) > -1 || mutation.attributeName == 'style') {
+						if (element.loadyWidth !== element.offsetWidth) element.loadyWidth = element.offsetWidth;
+						if (element.loadyHeight !== element.offsetHeight) element.loadyHeight = element.offsetHeight;
+						console.log('ehh change');
 						loadyObserver.disconnect();
 						Loady(element);
 					}
