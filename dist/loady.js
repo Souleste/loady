@@ -74,7 +74,7 @@
 			for (let idx in mutationsList) {
 				var mutation = mutationsList[idx];
 				if (mutation.type == "attributes") {
-					if ( mutation.attributeName == 'style' && (element.loadyWidth !== element.offsetWidth || element.loadyHeight !== element.offsetHeight)) {
+					if ((mutation.attributeName == 'style' || mutation.attributeName == 'class') && (element.loadyWidth !== element.offsetWidth || element.loadyHeight !== element.offsetHeight)) {
 						console.log('ehh change');
 						if (element.loadyWidth !== element.offsetWidth) element.loadyWidth = element.offsetWidth;
 						if (element.loadyHeight !== element.offsetHeight) element.loadyHeight = element.offsetHeight; 
