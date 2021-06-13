@@ -4,7 +4,6 @@
 .loady[data-animation="three-spin"] circle.loady-path-2,
 .loady[data-animation="three-spin"] circle.loady-path-3 {
 	animation-iteration-count: infinite;
-	transform-origin: 50% 50%;
 }
 
 .loady[data-animation="three-spin"] circle.loady-path-1 {
