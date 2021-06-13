@@ -5,7 +5,6 @@
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	transform: rotate(-90deg);
-	transform-origin: 50% 50%;
 }
 .loady.paused[data-animation="spin"] circle.loady-path-1 { animation-play-state: paused }
 
