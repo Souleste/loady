@@ -1,20 +1,20 @@
 /* loady spin */
 
-.loady[data-animation="spin"] circle.loady-path-1 {
+.loady[data-animation="spin"] svg.loady-path-1 {
 	animation-name: loady-spin;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	transform: rotate(-90deg);
 }
-.loady.paused[data-animation="spin"] circle.loady-path-1 { animation-play-state: paused }
+.loady.paused[data-animation="spin"] svg.loady-path-1 { animation-play-state: paused }
 
 /* speed */
-.loady[data-animation="spin"][data-speed="0.5"] circle.loady-path-1 { animation-duration: 0.5s }
-.loady[data-animation="spin"][data-speed="1"] circle.loady-path-1 { animation-duration: 1s }
-.loady[data-animation="spin"][data-speed="1.5"] circle.loady-path-1 { animation-duration: 1.5s }
-.loady[data-animation="spin"][data-speed="2"] circle.loady-path-1 { animation-duration: 2s }
-.loady[data-animation="spin"][data-speed="2.5"] circle.loady-path-1 { animation-duration: 2.5s }
-.loady[data-animation="spin"][data-speed="3"] circle.loady-path-1 { animation-duration: 3s }
+.loady[data-animation="spin"][data-speed="0.5"] svg.loady-path-1 { animation-duration: 0.5s }
+.loady[data-animation="spin"][data-speed="1"] svg.loady-path-1 { animation-duration: 1s }
+.loady[data-animation="spin"][data-speed="1.5"] svg.loady-path-1 { animation-duration: 1.5s }
+.loady[data-animation="spin"][data-speed="2"] svg.loady-path-1 { animation-duration: 2s }
+.loady[data-animation="spin"][data-speed="2.5"] svg.loady-path-1 { animation-duration: 2.5s }
+.loady[data-animation="spin"][data-speed="3"] svg.loady-path-1 { animation-duration: 3s }
 
 /* keyframes */
 @keyframes loady-spin {
