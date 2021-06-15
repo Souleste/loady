@@ -29,7 +29,7 @@
 	animation-name: loady-snake;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
-	transform: rotate(-90deg) scale(1, 1);
+	transform: rotate(-90deg);
 }
 .loady.paused[data-animation="snake"] svg.loady-path-1 { animation-play-state: paused }
 
@@ -45,15 +45,15 @@
 @keyframes loady-snake {
 	49.98% {
 		stroke-dashoffset: 0px;
-		transform: rotate(135deg) scale(1, 1);
+		transform: rotate(135deg);
 	}
 	49.99% {
 		stroke-dashoffset: 0px;
-		transform: rotate(135deg) scale(1, -1);
+		transform: rotate(135deg);
 	}
 	100% {
-		stroke-dashoffset: 250px;
-		transform: rotate(270deg) scale(1, -1);
+		stroke-dashoffset: -250px;
+		transform: rotate(270deg);
 	}
 }
 
