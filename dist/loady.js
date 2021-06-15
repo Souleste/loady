@@ -51,7 +51,11 @@
 			case "snake":
 				params.radius = settings.size == "thicc" ? 40 : 45;
 				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-placeholder" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.phColor+'" stroke-width="'+params.strokeWidth+'" style="transform-origin: '+params.origin+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="250" stroke-dashoffset="250" transform-origin="'+params.origin+'" style="transform-origin: '+params.origin+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg>';
-				document.write('<script src="animations/snake.js" type="text/javascript"></script>');
+				try {
+					document.write('<script src="animations/snake.js" type="text/javascript"></script>');
+				} catch(error) {
+					console.log('YOOHOO: ', error);
+				}
 // 				if (isIE) {
 // 					animate.steps.step1 = function (svg) {
 // 						return window.requestAnimationFrame(function (timestamp) {
