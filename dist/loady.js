@@ -36,10 +36,41 @@
 			strokeColor: colors[settings.color] ? colors[settings.color] : settings.color,
 			phColor: settings.phColor,
 		};
+		var animation = {
+			duration: speed * 1000,
+			elapsed: 0,
+			start: undefined,
+			steps: {},
+			clear: {}
+		};
+		var isIE = window.navigator.userAgent.indexOf('MSIE') > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./);
 		switch (settings.animation) {
 			case "snake":
 				params.radius = settings.size == "thicc" ? 40 : 45;
 				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-placeholder" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.phColor+'" stroke-width="'+params.strokeWidth+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="285" stroke-dashoffset="286" transform-origin="'+params.origin+'px '+params.origin+'px '+params.origin+'px"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg>';
+				if (isIE) {
+					animation.steps.step1 = function () {
+						var step = setInterval(function () {
+							var timestamp = performance.now();
+							if (animation.start == undefined) animation.start = timestamp;
+							animation.elapsed = timestamp - animation.start;
+
+							var percent = (animation.elapsed / (animation.duration / 2)) * 100;
+							var offset = (((100 - percent) / 100) * 250).toFixed(2);
+							element.setAttribute("stroke-dashoffset", offset);
+
+							if (animation.elapsed >= animation.duration) {
+								console.log("STEP1 DONE");
+								clearInterval(animation.clear.step1);
+								animation.elapsed = 0;
+								animation.start = undefined;
+								animation.steps.step1();
+							}
+						}, 1);
+						animation.clear.step1 = step;
+						return step;
+					};
+				}
 				break;
 			case "spin":
 				params.radius = settings.size == "thicc" ? 40 : 45;
