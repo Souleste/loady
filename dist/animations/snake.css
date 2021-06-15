@@ -4,7 +4,7 @@
 	animation-name: loady-snake;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
-	transform: rotate(-90deg) scale(1, 1);
+	transform: rotate(-90deg);
 }
 .loady.paused[data-animation="snake"] svg.loady-path-1 { animation-play-state: paused }
 
