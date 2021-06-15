@@ -94,7 +94,7 @@
 		/* animate */
 		if (animation.steps.step1) {
 			switch(settings.animation) {
-				case 'snake': animation.steps.step1(element.getElementsByClassName('loady-path-1')[0]), break;
+				case 'snake': animation.steps.step1(element.getElementsByClassName('loady-path-1')[0]); break;
 			}
 		}
 
