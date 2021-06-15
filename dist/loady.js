@@ -103,7 +103,7 @@
 		element.setAttribute("data-color", settings.color);
 		element.setAttribute("data-dir", settings.dir);
 		element.setAttribute("data-size", settings.size);
-		element.setAttribute("data-speed", settings.speed);
+		element.setAttribute("data-speed", settings.duration);
 
 		/* detect loady attribute change */
 		const loadyObserver = new MutationObserver(function (
