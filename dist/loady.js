@@ -47,7 +47,7 @@
 		switch (settings.animation) {
 			case "snake":
 				params.radius = settings.size == "thicc" ? 40 : 45;
-				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-placeholder" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.phColor+'" stroke-width="'+params.strokeWidth+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="250" stroke-dashoffset="duration" transform-origin="'+params.origin+'px '+params.origin+'px '+params.origin+'px"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg>';
+				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-placeholder" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.phColor+'" stroke-width="'+params.strokeWidth+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="250" stroke-dashoffset="250" transform-origin="'+params.origin+'px '+params.origin+'px '+params.origin+'px"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg>';
 				if (isIE) {
 					animation.steps.step1 = function (svg) {
 						var step = setInterval(function () {
