@@ -64,7 +64,7 @@
 								clearInterval(animation.clear.step1);
 								animation.elapsed = 0;
 								animation.start = undefined;
-								animation.steps.step1();
+								animation.steps.step1(svg);
 							}
 						}, 1);
 						animation.clear.step1 = step;
