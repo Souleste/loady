@@ -72,7 +72,7 @@
 				break;
 			case "spin":
 				params.radius = settings.size == "thicc" ? 40 : 45;
-				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-placeholder" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.phColor+'" stroke-width="'+params.strokeWidth+'" style="transform-origin: '+params.origin+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="120" stroke-dashoffset="120" stroke-width="'+params.strokeWidth+'" transform-origin="'+params.origin+'" style="transform-origin: '+params.origin+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg>';
+				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-placeholder" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.phColor+'" stroke-width="'+params.strokeWidth+'" style="transform-origin: '+params.origin+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="250" stroke-dashoffset="140" stroke-width="'+params.strokeWidth+'" transform-origin="'+params.origin+'" style="transform-origin: '+params.origin+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg>';
 				break;
 			case "three-spin":
 				params.rad1 = settings.size == "thicc" ? 40 : 45;
