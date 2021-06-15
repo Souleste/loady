@@ -19,7 +19,7 @@
 	var Loady = function (element) {
 		var settings = {
 			size: element.getAttribute("data-size") ? element.getAttribute("data-size") : "",
-			speed: element.getAttribute("data-speed") ? element.getAttribute("data-speed") : "1",
+			duration: element.getAttribute("data-speed") ? element.getAttribute("data-speed") : "1",
 			animation: element.getAttribute("data-animation") ? element.getAttribute("data-animation") : "spin",
 			color: element.getAttribute("data-color") ? element.getAttribute("data-color") : "black",
 			phColor: element.getAttribute("data-placeholderColor") ? element.getAttribute("data-placeholderColor") : "rgba(0,0,0,0.1)",
@@ -37,7 +37,7 @@
 			phColor: settings.phColor,
 		};
 		var animation = {
-			duration: speed * 1000,
+			duration: settings.duration * 1000,
 			elapsed: 0,
 			start: undefined,
 			steps: {},
