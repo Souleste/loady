@@ -60,7 +60,6 @@
 							svg.setAttribute("stroke-dashoffset", offset);
 
 							if (animation.elapsed >= animation.duration) {
-								console.log("STEP1 DONE");
 								clearInterval(animation.clear.step1);
 								animation.elapsed = 0;
 								animation.start = undefined;
