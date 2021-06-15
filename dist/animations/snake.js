@@ -1,5 +1,5 @@
 (function(animations) {
-    animations.snake.step1 = function (animate, svg) {
+    animations.snake = function (animate, svg) {
         return window.requestAnimationFrame(function (timestamp) {
             if (animate.start == undefined) animate.start = timestamp;
             animate.elapsed = timestamp - animate.start;
@@ -11,9 +11,9 @@
             if (animate.elapsed >= animate.duration) {
                 animate.elapsed = 0;
                 animate.start = undefined;
-                animate.snake.step1(animate, svg);
+                animations.snake(animate, svg);
             } else {
-                animate.snake.step1(animate, svg);
+                animations.snake(animate, svg);
             }
           });
     }
