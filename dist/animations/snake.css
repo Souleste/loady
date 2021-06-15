@@ -19,15 +19,15 @@
 /* keyframes */
 @keyframes loady-snake {
 	49.98% {
-		stroke-dashoffset: 0;
-		transform: rotate(135deg) scale(1, 1);
+		stroke-dashoffset: 0px;
+		transform: rotate(135deg);
 	}
 	49.99% {
-		stroke-dashoffset: 0;
-		transform: rotate(135deg) scale(1, -1);
+		stroke-dashoffset: 0px;
+		transform: rotate(135deg);
 	}
 	100% {
-		stroke-dashoffset: 250;
-		transform: rotate(270deg) scale(1, -1);
+		stroke-dashoffset: -250px;
+		transform: rotate(270deg);
 	}
 }
