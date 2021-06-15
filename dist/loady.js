@@ -49,7 +49,7 @@
 				params.radius = settings.size == "thicc" ? 40 : 45;
 				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-placeholder" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.phColor+'" stroke-width="'+params.strokeWidth+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="285" stroke-dashoffset="286" transform-origin="'+params.origin+'px '+params.origin+'px '+params.origin+'px"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg>';
 				if (isIE) {
-					animation.steps.step1 = function () {
+					animation.steps.step1 = function (svg) {
 						var step = setInterval(function () {
 							var timestamp = performance.now();
 							if (animation.start == undefined) animation.start = timestamp;
@@ -57,7 +57,7 @@
 
 							var percent = (animation.elapsed / (animation.duration / 2)) * 100;
 							var offset = (((100 - percent) / 100) * 250).toFixed(2);
-							element.setAttribute("stroke-dashoffset", offset);
+							svg.setAttribute("stroke-dashoffset", offset);
 
 							if (animation.elapsed >= animation.duration) {
 								console.log("STEP1 DONE");
@@ -90,6 +90,13 @@
 				break;
 		}
 		element.innerHTML = html;
+		
+		/* animate */
+		if (animation.steps.step1) {
+			switch(settings.animation) {
+				case 'snake': animation.steps.step1(element.getElementsByClassName('loady-path-1')[0]), break;
+			}
+		}
 
 		/* set attributes */
 		element.setAttribute("data-animation", settings.animation);
