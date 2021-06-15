@@ -28,10 +28,11 @@
 		
 		element.loadyWidth = element.offsetWidth;
 		element.loadyHeight = element.offsetHeight;
+		var transformOrigin = (element.loadyWidth / 2).toFixed(2) + 'px';
 
 		var html = "";
 		var params = {
-			origin: (element.loadyWidth / 2).toFixed(2),
+			origin: transformOrigin+' '+transformOrigin+' '+transformOrigin,
 			strokeWidth: settings.size == "thicc" ? 15 : settings.size == "thin" ? 5 : 10,
 			strokeColor: colors[settings.color] ? colors[settings.color] : settings.color,
 			phColor: settings.phColor,
@@ -47,7 +48,7 @@
 		switch (settings.animation) {
 			case "snake":
 				params.radius = settings.size == "thicc" ? 40 : 45;
-				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-placeholder" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.phColor+'" stroke-width="'+params.strokeWidth+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="250" stroke-dashoffset="250" transform-origin="'+params.origin+'px '+params.origin+'px '+params.origin+'px"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg>';
+				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-placeholder" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.phColor+'" stroke-width="'+params.strokeWidth+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none" style="transform-origin: '+params.origin+'"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="250" stroke-dashoffset="250" transform-origin="'+params.origin+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg>';
 				if (isIE) {
 					animation.steps.step1 = function (svg) {
 						var step = setInterval(function () {
@@ -73,13 +74,13 @@
 				break;
 			case "spin":
 				params.radius = settings.size == "thicc" ? 40 : 45;
-				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-placeholder" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.phColor+'" stroke-width="'+params.strokeWidth+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="120" stroke-dashoffset="120" stroke-width="'+params.strokeWidth+'" transform-origin="'+params.origin+'px '+params.origin+'px '+params.origin+'px"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg>';
+				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-placeholder" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.phColor+'" stroke-width="'+params.strokeWidth+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="120" stroke-dashoffset="120" stroke-width="'+params.strokeWidth+'" transform-origin="'+params.origin+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg>';
 				break;
 			case "three-spin":
 				params.rad1 = settings.size == "thicc" ? 40 : 45;
 				params.rad2 = settings.size == "thicc" ? 25 : 30;
 				params.rad3 = settings.size == "thicc" ? 10 : 15;
-				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="250" stroke-dashoffset="71.5" transform-origin="'+params.origin+'px '+params.origin+'px '+params.origin+'px"><circle cx="50" cy="50" r="'+params.rad1+'" fill="none"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-2" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="200" stroke-dashoffset="105"><circle cx="50" cy="50" r="'+params.rad2+'" fill="none" transform-origin="'+params.origin+'px '+params.origin+'px '+params.origin+'px"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-3" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="100" stroke-dashoffset="75" transform-origin="'+params.origin+'px '+params.origin+'px '+params.origin+'px"><circle cx="50" cy="50" r="'+params.rad3+'" fill="none"></circle></svg>';
+				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="250" stroke-dashoffset="71.5" transform-origin="'+params.origin+'"><circle cx="50" cy="50" r="'+params.rad1+'" fill="none"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-2" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="200" stroke-dashoffset="105"><circle cx="50" cy="50" r="'+params.rad2+'" fill="none" transform-origin="'+params.origin+'"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-3" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="100" stroke-dashoffset="75" transform-origin="'+params.origin+'"><circle cx="50" cy="50" r="'+params.rad3+'" fill="none"></circle></svg>';
 				break;
 			case "three-dot":
 				params.rad1 = settings.size == "thicc" ? 35 : 30;
