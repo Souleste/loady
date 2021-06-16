@@ -1,6 +1,8 @@
 (function(global, factory) {
 	global.Loady = factory;
 })(this, (function(element, options) {
+	if (element.Loady) element.Loady.watch.disconnect();
+
 	let Loady = this;
 
 	this.animations = {
@@ -46,7 +48,9 @@
 		for (let idx in mutationsList) {
 			var mutation = mutationsList[idx];
 			if (mutation.type == 'attributes') {
-				if (['data-animation', 'data-color', 'data-dir', 'data-size', 'data-duration'].indexOf(mutation.attributeName) <= -1 && !((mutation.attributeName == 'style' || mutation.attributeName == 'class') && (element.loadyWidth !== element.offsetWidth || element.loadyHeight !== element.offsetHeight))) return;
+				var currentWidth = window.getComputedStyle(element)['width'],
+					currentHeight = window.getComputedStyle(element)['height'];
+				if (['data-animation', 'data-color', 'data-dir', 'data-size', 'data-duration'].indexOf(mutation.attributeName) <= -1 && !((mutation.attributeName == 'style' || mutation.attributeName == 'class') && (element.loadyWidth !== currentWidth || element.loadyHeight !== currentHeight))) return;
 
 				if ((mutation.attributeName == 'style' || mutation.attributeName == 'class') && (element.loadyWidth !== element.offsetWidth || element.loadyHeight !== element.offsetHeight)) {
 					if (element.loadyWidth !== element.offsetWidth) element.loadyWidth = element.offsetWidth;
@@ -72,8 +76,8 @@
 			settings[name] = options[name];
 		}
 
-		element.loadyWidth = element.offsetWidth;
-		element.loadyHeight = element.offsetHeight;
+		element.loadyWidth = window.getComputedStyle(element)['width'];
+		element.loadyHeight = window.getComputedStyle(element)['height'];
 		var transformOrigin = (element.loadyWidth / 2).toFixed(2) + 'px';
 
 		var html = '';
@@ -137,11 +141,12 @@
 	}
 
 	this.init(element, options);
+	element.Loady = Loady;
 	return Loady;
 }));
 
-if ('jQuery' in window && '$' in window)
-	(function ($) {
+if ('jQuery' in window && '$' in window) {
+	(function($) {
 		$.fn.loady = function (options) {
 			return this.each(function () {
 				var j = $(this);
@@ -154,6 +159,7 @@ if ('jQuery' in window && '$' in window)
 			});
 		};
 	})(jQuery);
+}
 
 (function (elements) {
 	Array.prototype.slice.call(elements).forEach(function (element) {
@@ -164,15 +170,16 @@ if ('jQuery' in window && '$' in window)
 	const bodyObserver = new MutationObserver(function (mutationsList, observer) {
 		for (let idx in mutationsList) {
 			var mutation = mutationsList[idx];
-			if (mutation.type == 'childList') {
+			if (mutation.type == 'childList' || mutation.type == 'subtree') {
 				var added = Array.prototype.slice.call(mutation.addedNodes).filter(function (o) {
 					if (o.nodeType !== 1) return;
 					return Array.prototype.slice.call(o.classList).indexOf('loady') > -1;
 				}).forEach(function (o) {
+					console.log('MUTATION');
 					new Loady(o);
 				});
 			}
 		}
 	});
-	bodyObserver.observe(document.body, { childList: true }); // start observing
+	bodyObserver.observe(document, { childList: true, subtree: true }); // start observing
 })(document.getElementsByClassName('loady'));
