@@ -1,11 +1,8 @@
 (function(global, factory) {
 	global.Loady = factory;
-})(this, function(element, options) {
+})(this, (function(element, options) {
 	let Loady = this;
 
-	this.display = {
-		element: element
-	};
 	this.animations = {
 		snake: function (animate, svg) {
 			return window.requestAnimationFrame(function (timestamp) {
@@ -44,7 +41,6 @@
 	}
 	/* detect loady attribute change */
 	this.watch = new MutationObserver(function (mutationsList, observer) {
-		let element = Loady.display.element;
 		for (let idx in mutationsList) {
 			var mutation = mutationsList[idx];
 			if (mutation.type == 'attributes') {
@@ -133,7 +129,8 @@
 	}
 
 	this.init(element, options);
-});
+	return Loady;
+}));
 
 if ('jQuery' in window && '$' in window)
 	(function ($) {
