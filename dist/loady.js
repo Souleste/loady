@@ -50,7 +50,7 @@ var Loady = {
 		
 		element.loadyWidth = element.offsetWidth;
 		element.loadyHeight = element.offsetHeight;
-		var transformOrigin = Math.round(element.loadyWidth / 2) + 'px';
+		var transformOrigin = (element.loadyWidth / 2).toFixed(2) + 'px';
 
 		var html = "";
 		var params = {
