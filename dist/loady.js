@@ -158,7 +158,7 @@ if ('jQuery' in window && '$' in window)
 			var mutation = mutationsList[idx];
 			if (mutation.type == 'childList') {
 				var added = Array.prototype.slice.call(mutation.addedNodes).filter(function (o) {
-					if (o.nodeName == '#text') return;
+					if (o.nodeType !== 1) return;
 					return Array.prototype.slice.call(o.classList).indexOf('loady') > -1;
 				}).forEach(function (o) {
 					new Loady(o);
