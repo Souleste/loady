@@ -83,11 +83,6 @@
 			strokeColor: Loady.colors[settings.color] ? Loady.colors[settings.color] : settings.color,
 			phColor: settings.phColor,
 		};
-		var animate = {
-			duration: settings.duration * 1000,
-			elapsed: 0,
-			start: undefined,
-		};
 		var common = 'xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" ';
 		switch (settings.animation) {
 			case 'snake':
@@ -118,6 +113,11 @@
 
 		/* animate */
 		if (window.navigator.userAgent.indexOf('MSIE') > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) { // if IE
+			var animate = {
+				duration: settings.duration * 1000,
+				elapsed: 0,
+				start: undefined,
+			};
 			switch(settings.animation) {
 				case 'snake': Loady.animations.snake(animate, element.getElementsByClassName('loady-path-1')[0]); break;
 			}
