@@ -103,13 +103,13 @@ var Loady = {
 		element.setAttribute("data-speed", settings.duration);
 
 		/* detect loady attribute change */
-		const loadyObserver = new MutationObserver(function (
-			mutationsList,
-			observer
-		) {
+		const loadyObserver = new MutationObserver(function (mutationsList, observer) {
 			for (let idx in mutationsList) {
 				var mutation = mutationsList[idx];
 				if (mutation.type == "attributes") {
+					console.log(["data-animation", "data-color", "data-dir", "data-size", "data-speed"].indexOf(mutation.attributeName) <= -1);
+					console.log(!(mutation.attributeName == 'style' || mutation.attributeName == 'class') && (element.loadyWidth !== element.offsetWidth || element.loadyHeight !== element.offsetHeight));
+					
 					if (["data-animation", "data-color", "data-dir", "data-size", "data-speed"].indexOf(mutation.attributeName) <= -1 || !(mutation.attributeName == 'style' || mutation.attributeName == 'class') && (element.loadyWidth !== element.offsetWidth || element.loadyHeight !== element.offsetHeight)) return;
 					
 					if ((mutation.attributeName == 'style' || mutation.attributeName == 'class') && (element.loadyWidth !== element.offsetWidth || element.loadyHeight !== element.offsetHeight)) {
