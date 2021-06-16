@@ -88,27 +88,30 @@
 			elapsed: 0,
 			start: undefined,
 		};
+		var common = 'xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" ';
 		switch (settings.animation) {
 			case 'snake':
 				params.radius = settings.size == 'thicc' ? 40 : 45;
 				params.dashOffset = settings.size == 'thicc' ? 250 : 283;
-				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-placeholder" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.phColor+'" stroke-width="'+params.strokeWidth+'" style="transform-origin: '+params.origin+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="'+params.dashOffset+'" stroke-dashoffset="'+params.dashOffset+'" transform-origin="'+params.origin+'" style="transform-origin: '+params.origin+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg>';
+				common += 'fill="none" style="transform-origin: '+params.origin+'"';
+				html = '<svg class="loady-placeholder"><circle cx="50" cy="50" r="'+params.radius+'"></circle></svg><svg class="loady-path-1" stroke-dasharray="'+params.dashOffset+'" stroke-dashoffset="'+params.dashOffset+'"><circle cx="50" cy="50" r="'+params.radius+'"></circle></svg>';
 				break;
 			case 'spin':
 				params.radius = settings.size == 'thicc' ? 40 : 45;
-				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-placeholder" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.phColor+'" stroke-width="'+params.strokeWidth+'" style="transform-origin: '+params.origin+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="250" stroke-dashoffset="125" stroke-width="'+params.strokeWidth+'" transform-origin="'+params.origin+'" style="transform-origin: '+params.origin+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg>';
+				common += 'fill="none" style="transform-origin: '+params.origin+'"';
+				html = '<svg class="loady-placeholder"><circle cx="50" cy="50" r="'+params.radius+'"></circle></svg><svg class="loady-path-1" stroke-dasharray="250" stroke-dashoffset="125"><circle cx="50" cy="50" r="'+params.radius+'"></circle></svg>';
 				break;
 			case 'three-spin':
 				params.rad1 = settings.size == 'thicc' ? 40 : 45;
 				params.rad2 = settings.size == 'thicc' ? 25 : 30;
 				params.rad3 = settings.size == 'thicc' ? 10 : 15;
-				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="250" stroke-dashoffset="71.5" transform-origin="'+params.origin+'" style="transform-origin: '+params.origin+'"><circle cx="50" cy="50" r="'+params.rad1+'" fill="none"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-2" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="200" stroke-dashoffset="105" style="transform-origin: '+params.origin+'"><circle cx="50" cy="50" r="'+params.rad2+'" fill="none" transform-origin="'+params.origin+'"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-3" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="100" stroke-dashoffset="75" transform-origin="'+params.origin+'" style="transform-origin: '+params.origin+'"><circle cx="50" cy="50" r="'+params.rad3+'" fill="none"></circle></svg>';
+				common += 'fill="none" style="transform-origin: '+params.origin+'"';
+				html = '<svg class="loady-path-1" stroke-dasharray="250" stroke-dashoffset="71.5" '+common+'><circle cx="50" cy="50" r="'+params.rad1+'"></circle></svg><svg class="loady-path-2" stroke-dasharray="200" stroke-dashoffset="105" '+common+'><circle cx="50" cy="50" r="'+params.rad2+'"></circle></svg><svg class="loady-path-3" stroke-dasharray="100" stroke-dashoffset="75" '+common+'><circle cx="50" cy="50" r="'+params.rad3+'"></circle></svg>';
 				break;
 			case 'three-dot':
-				params.rad1 = settings.size == 'thicc' ? 35 : 30;
-				params.rad2 = settings.size == 'thicc' ? 25 : 20;
-				params.rad3 = settings.size == 'thicc' ? 15 : 10;
-				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'"><circle cx="10" cy="50" r="'+params.rad1+'" fill="'+params.strokeColor+'" stroke-linecap="round" stroke-linejoin="round"></circle><circle class="loady-path-2" cx="50" cy="50" r="'+params.rad2+'" fill="'+params.strokeColor+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="200" stroke-dashoffset="105"></circle><circle class="loady-path-3" cx="90" cy="50" r="'+params.rad3+'" fill="'+params.strokeColor+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="100" stroke-dashoffset="75"></circle></svg>'
+				params.radius = settings.size == 'thicc' ? 20 : settings.size == 'thin' ? 15 : 10;
+				common += 'fill="'+params.strokeColor+'"';
+				html = '<svg class="loady-path-1" '+common+'><circle cx="10" cy="50" r="'+params.radius+'"></circle></svg><svg class="loady-path-2" '+common+'><circle cx="50" cy="50" r="'+params.radius+'"></circle></svg><svg class="loady-path-2" '+common+'><circle cx="90" cy="50" r="'+params.radius+'"></circle></svg>'
 				break;
 		}
 		element.innerHTML = html;
