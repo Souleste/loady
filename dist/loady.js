@@ -1,5 +1,9 @@
 var Loady = function(element, options) {
 	let Loady = this;
+
+	this.display = {
+		element: element
+	};
 	this.animations = {
 		snake: function (animate, svg) {
 			return window.requestAnimationFrame(function (timestamp) {
@@ -38,7 +42,7 @@ var Loady = function(element, options) {
 	}
 	/* detect loady attribute change */
 	this.watch = new MutationObserver(function (mutationsList, observer) {
-		let element = this;
+		let element = Loady.display.element;
 		for (let idx in mutationsList) {
 			var mutation = mutationsList[idx];
 			if (mutation.type == 'attributes') {
@@ -152,7 +156,6 @@ if ('jQuery' in window && '$' in window)
 	/* detect new loady elements */
 	const bodyObserver = new MutationObserver(function (mutationsList, observer) {
 		for (let idx in mutationsList) {
-			console.log('blah');
 			var mutation = mutationsList[idx];
 			if (mutation.type == 'childList') {
 				var added = Array.prototype.slice.call(mutation.addedNodes).filter(function (o) {
