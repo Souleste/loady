@@ -110,7 +110,6 @@ window.Loady = {
 					if (["data-animation", "data-color", "data-dir", "data-size", "data-speed"].indexOf(mutation.attributeName) <= -1 && !((mutation.attributeName == 'style' || mutation.attributeName == 'class') && (element.loadyWidth !== element.offsetWidth || element.loadyHeight !== element.offsetHeight))) return;
 
 					if ((mutation.attributeName == 'style' || mutation.attributeName == 'class') && (element.loadyWidth !== element.offsetWidth || element.loadyHeight !== element.offsetHeight)) {
-						console.log('ehh change');
 						if (element.loadyWidth !== element.offsetWidth) element.loadyWidth = element.offsetWidth;
 						if (element.loadyHeight !== element.offsetHeight) element.loadyHeight = element.offsetHeight;
 					};
