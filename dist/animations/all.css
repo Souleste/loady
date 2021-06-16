@@ -9,13 +9,13 @@
 }
 .loady.paused[data-animation="spin"] svg.loady-path-1 { animation-play-state: paused }
 
-/* speed */
-.loady[data-animation="spin"][data-speed="0.5"] svg.loady-path-1 { animation-duration: 0.5s }
-.loady[data-animation="spin"][data-speed="1"] svg.loady-path-1 { animation-duration: 1s }
-.loady[data-animation="spin"][data-speed="1.5"] svg.loady-path-1 { animation-duration: 1.5s }
-.loady[data-animation="spin"][data-speed="2"] svg.loady-path-1 { animation-duration: 2s }
-.loady[data-animation="spin"][data-speed="2.5"] svg.loady-path-1 { animation-duration: 2.5s }
-.loady[data-animation="spin"][data-speed="3"] svg.loady-path-1 { animation-duration: 3s }
+/* duration */
+.loady[data-animation="spin"][data-duration="0.5"] svg.loady-path-1 { animation-duration: 0.5s }
+.loady[data-animation="spin"][data-duration="1"] svg.loady-path-1 { animation-duration: 1s }
+.loady[data-animation="spin"][data-spedurationed="1.5"] svg.loady-path-1 { animation-duration: 1.5s }
+.loady[data-animation="spin"][data-duration="2"] svg.loady-path-1 { animation-duration: 2s }
+.loady[data-animation="spin"][data-duration="2.5"] svg.loady-path-1 { animation-duration: 2.5s }
+.loady[data-animation="spin"][data-duration="3"] svg.loady-path-1 { animation-duration: 3s }
 
 /* keyframes */
 @keyframes loady-spin {
@@ -33,13 +33,13 @@
 }
 .loady.paused[data-animation="snake"] svg.loady-path-1 { animation-play-state: paused }
 
-/* speed */
-.loady[data-animation="snake"][data-speed="0.5"] svg.loady-path-1 { animation-duration: 0.5s }
-.loady[data-animation="snake"][data-speed="1"] svg.loady-path-1 { animation-duration: 1s }
-.loady[data-animation="snake"][data-speed="1.5"] svg.loady-path-1 { animation-duration: 1.5s }
-.loady[data-animation="snake"][data-speed="2"] svg.loady-path-1 { animation-duration: 2s }
-.loady[data-animation="snake"][data-speed="2.5"] svg.loady-path-1 { animation-duration: 2.5s }
-.loady[data-animation="snake"][data-speed="3"] svg.loady-path-1 { animation-duration: 3s }
+/* duration */
+.loady[data-animation="snake"][data-duration="0.5"] svg.loady-path-1 { animation-duration: 0.5s }
+.loady[data-animation="snake"][data-duration="1"] svg.loady-path-1 { animation-duration: 1s }
+.loady[data-animation="snake"][data-duration="1.5"] svg.loady-path-1 { animation-duration: 1.5s }
+.loady[data-animation="snake"][data-duration="2"] svg.loady-path-1 { animation-duration: 2s }
+.loady[data-animation="snake"][data-duration="2.5"] svg.loady-path-1 { animation-duration: 2.5s }
+.loady[data-animation="snake"][data-duration="3"] svg.loady-path-1 { animation-duration: 3s }
 
 /* keyframes */
 @keyframes loady-snake {
@@ -82,42 +82,42 @@
 .loady.paused[data-animation="three-spin"] svg.loady-path-2,
 .loady.paused[data-animation="three-spin"] svg.loady-path-3 { animation-play-state: paused }
 
-/* speed */
-.loady[data-animation="three-spin"][data-speed="0.5"] svg.loady-path-1,
-.loady[data-animation="three-spin"][data-speed="0.5"] svg.loady-path-2,
-.loady[data-animation="three-spin"][data-speed="0.5"] svg.loady-path-3 { animation-duration: 0.5s }
-.loady[data-animation="three-spin"][data-speed="0.5"] svg.loady-path-2 { animation-delay: 0.25s }
-.loady[data-animation="three-spin"][data-speed="0.5"] svg.loady-path-3 { animation-delay: 0.375s }
+/* duration */
+.loady[data-animation="three-spin"][data-duration="0.5"] svg.loady-path-1,
+.loady[data-animation="three-spin"][data-duration="0.5"] svg.loady-path-2,
+.loady[data-animation="three-spin"][data-duration="0.5"] svg.loady-path-3 { animation-duration: 0.5s }
+.loady[data-animation="three-spin"][data-duration="0.5"] svg.loady-path-2 { animation-delay: 0.25s }
+.loady[data-animation="three-spin"][data-duration="0.5"] svg.loady-path-3 { animation-delay: 0.375s }
 
-.loady[data-animation="three-spin"][data-speed="1"] svg.loady-path-1,
-.loady[data-animation="three-spin"][data-speed="1"] svg.loady-path-2,
-.loady[data-animation="three-spin"][data-speed="1"] svg.loady-path-3 { animation-duration: 1s }
-.loady[data-animation="three-spin"][data-speed="1"] svg.loady-path-2 { animation-delay: 0.5s }
-.loady[data-animation="three-spin"][data-speed="1"] svg.loady-path-3 { animation-delay: 0.75s }
+.loady[data-animation="three-spin"][data-duration="1"] svg.loady-path-1,
+.loady[data-animation="three-spin"][data-duration="1"] svg.loady-path-2,
+.loady[data-animation="three-spin"][data-duration="1"] svg.loady-path-3 { animation-duration: 1s }
+.loady[data-animation="three-spin"][data-duration="1"] svg.loady-path-2 { animation-delay: 0.5s }
+.loady[data-animation="three-spin"][data-duration="1"] svg.loady-path-3 { animation-delay: 0.75s }
 
-.loady[data-animation="three-spin"][data-speed="1.5"] svg.loady-path-1,
-.loady[data-animation="three-spin"][data-speed="1.5"] svg.loady-path-2,
-.loady[data-animation="three-spin"][data-speed="1.5"] svg.loady-path-3 { animation-duration: 1.5s }
-.loady[data-animation="three-spin"][data-speed="1.5"] svg.loady-path-2 { animation-delay: 0.75s }
-.loady[data-animation="three-spin"][data-speed="1.5"] svg.loady-path-3 { animation-delay: 1.125s }
+.loady[data-animation="three-spin"][data-duration="1.5"] svg.loady-path-1,
+.loady[data-animation="three-spin"][data-duration="1.5"] svg.loady-path-2,
+.loady[data-animation="three-spin"][data-duration="1.5"] svg.loady-path-3 { animation-duration: 1.5s }
+.loady[data-animation="three-spin"][data-duration="1.5"] svg.loady-path-2 { animation-delay: 0.75s }
+.loady[data-animation="three-spin"][data-duration="1.5"] svg.loady-path-3 { animation-delay: 1.125s }
 
-.loady[data-animation="three-spin"][data-speed="2"] svg.loady-path-1,
-.loady[data-animation="three-spin"][data-speed="2"] svg.loady-path-2,
-.loady[data-animation="three-spin"][data-speed="2"] svg.loady-path-3 { animation-duration: 2s }
-.loady[data-animation="three-spin"][data-speed="2"] svg.loady-path-2 { animation-delay: 1s }
-.loady[data-animation="three-spin"][data-speed="2"] svg.loady-path-3 { animation-delay: 1.5s }
+.loady[data-animation="three-spin"][data-duration="2"] svg.loady-path-1,
+.loady[data-animation="three-spin"][data-duration="2"] svg.loady-path-2,
+.loady[data-animation="three-spin"][data-duration="2"] svg.loady-path-3 { animation-duration: 2s }
+.loady[data-animation="three-spin"][data-duration="2"] svg.loady-path-2 { animation-delay: 1s }
+.loady[data-animation="three-spin"][data-duration="2"] svg.loady-path-3 { animation-delay: 1.5s }
 
-.loady[data-animation="three-spin"][data-speed="2.5"] svg.loady-path-1,
-.loady[data-animation="three-spin"][data-speed="2.5"] svg.loady-path-2,
-.loady[data-animation="three-spin"][data-speed="2.5"] svg.loady-path-3 { animation-duration: 2.5s }
-.loady[data-animation="three-spin"][data-speed="2.5"] svg.loady-path-2 { animation-delay: 1.25s }
-.loady[data-animation="three-spin"][data-speed="2.5"] svg.loady-path-3 { animation-delay: 1.875s }
+.loady[data-animation="three-spin"][data-duration="2.5"] svg.loady-path-1,
+.loady[data-animation="three-spin"][data-duration="2.5"] svg.loady-path-2,
+.loady[data-animation="three-spin"][data-duration="2.5"] svg.loady-path-3 { animation-duration: 2.5s }
+.loady[data-animation="three-spin"][data-duration="2.5"] svg.loady-path-2 { animation-delay: 1.25s }
+.loady[data-animation="three-spin"][data-duration="2.5"] svg.loady-path-3 { animation-delay: 1.875s }
 
-.loady[data-animation="three-spin"][data-speed="3"] svg.loady-path-1,
-.loady[data-animation="three-spin"][data-speed="3"] svg.loady-path-2,
-.loady[data-animation="three-spin"][data-speed="3"] svg.loady-path-3 { animation-duration: 3s }
-.loady[data-animation="three-spin"][data-speed="3"] svg.loady-path-2 { animation-delay: 1.5s }
-.loady[data-animation="three-spin"][data-speed="3"] svg.loady-path-3 { animation-delay: 2.25s }
+.loady[data-animation="three-spin"][data-duration="3"] svg.loady-path-1,
+.loady[data-animation="three-spin"][data-duration="3"] svg.loady-path-2,
+.loady[data-animation="three-spin"][data-duration="3"] svg.loady-path-3 { animation-duration: 3s }
+.loady[data-animation="three-spin"][data-duration="3"] svg.loady-path-2 { animation-delay: 1.5s }
+.loady[data-animation="three-spin"][data-duration="3"] svg.loady-path-3 { animation-delay: 2.25s }
 
 /* keyframes */
 @keyframes loady-three-spin-1 {
