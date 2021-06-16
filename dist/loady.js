@@ -105,8 +105,10 @@
 				break;
 			case 'three-dot':
 				params.radius = 8;
+				params.cx1 = settings.size == 'thicc' ? 15 : 13;
+				params.cx3 = settings.size == 'thicc' ? 85 : 87;
 				common += 'fill="'+params.strokeColor+'" stroke="'+params.strokeColor+'"';
-				html = '<svg class="loady-path-1" '+common+'><circle cx="13" cy="50" r="'+params.radius+'"></circle></svg><svg class="loady-path-2" '+common+'><circle cx="50" cy="50" r="'+params.radius+'"></circle></svg><svg class="loady-path-3" '+common+'><circle cx="87" cy="50" r="'+params.radius+'"></circle></svg>'
+				html = '<svg class="loady-path-1" '+common+'><circle cx="'+params.cx1+'" cy="50" r="'+params.radius+'"></circle></svg><svg class="loady-path-2" '+common+'><circle cx="50" cy="50" r="'+params.radius+'"></circle></svg><svg class="loady-path-3" '+common+'><circle cx="'+params.cx3+'" cy="50" r="'+params.radius+'"></circle></svg>'
 				break;
 		}
 		element.innerHTML = html;
