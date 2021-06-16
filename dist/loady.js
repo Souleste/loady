@@ -1,8 +1,25 @@
-(function() {
-	Loady = {
-	 animations: {}
-	};
-})();
+var Loady = {
+ 	animations: {
+		snake: function (animate, svg) {
+			return window.requestAnimationFrame(function (timestamp) {
+				if (animate.start == undefined) animate.start = timestamp;
+				animate.elapsed = timestamp - animate.start;
+
+				var percent = (animate.elapsed / (animate.duration / 2)) * 100;
+				var offset = (((100 - percent) / 100) * 250).toFixed(2);
+				svg.setAttribute("stroke-dashoffset", offset);
+
+				if (animate.elapsed >= animate.duration) {
+					animate.elapsed = 0;
+					animate.start = undefined;
+					Loady.animations.snake(animate, svg);
+				} else {
+					Loady.animations.snake(animate, svg);
+				}
+			});
+		}
+	}
+};
 (function (elements) {
 	var colors = {
 		primary: "#34495e",
@@ -51,31 +68,6 @@
 			case "snake":
 				params.radius = settings.size == "thicc" ? 40 : 45;
 				html = '<svg xmlns="http://www.w3.org/2000/svg" class="loady-placeholder" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.phColor+'" stroke-width="'+params.strokeWidth+'" style="transform-origin: '+params.origin+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="loady-path-1" viewBox="0 0 100 100" width="100%" height="100%" stroke="'+params.strokeColor+'" stroke-width="'+params.strokeWidth+'" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="250" stroke-dashoffset="250" transform-origin="'+params.origin+'" style="transform-origin: '+params.origin+'"><circle cx="50" cy="50" r="'+params.radius+'" fill="none"></circle></svg>';
-				try {
-					document.write('<script src="animations/snake.js" type="text/javascript"></script>');
-				} catch(error) {
-					console.log('YOOHOO: ', error);
-				}
-// 				if (isIE) {
-// 					animate.steps.step1 = function (svg) {
-// 						return window.requestAnimationFrame(function (timestamp) {
-// 							if (animate.start == undefined) animate.start = timestamp;
-// 							animate.elapsed = timestamp - animate.start;
-
-// 							var percent = (animate.elapsed / (animate.duration / 2)) * 100;
-// 							var offset = (((100 - percent) / 100) * 250).toFixed(2);
-// 							svg.setAttribute("stroke-dashoffset", offset);
-
-// 							if (animate.elapsed >= animate.duration) {
-// 								animate.elapsed = 0;
-// 								animate.start = undefined;
-// 								animate.steps.step1(svg);
-// 							} else {
-// 								animate.steps.step1(svg);
-// 							}
-// 						});
-// 					}
-// 				}
 				break;
 			case "spin":
 				params.radius = settings.size == "thicc" ? 40 : 45;
@@ -97,9 +89,8 @@
 		element.innerHTML = html;
 		
 		/* animate */
-		if (window.navigator.userAgent.indexOf('MSIE') > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+		if (window.navigator.userAgent.indexOf('MSIE') > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) { // if IE
 			switch(settings.animation) {
-// 				case 'snake': animation.steps.step1(element.getElementsByClassName('loady-path-1')[0]); break;
 				case 'snake': Loady.animations.snake(animate, element.getElementsByClassName('loady-path-1')[0]); break;
 			}
 		}
