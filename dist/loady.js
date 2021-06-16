@@ -104,9 +104,9 @@
 				html = '<svg class="loady-path-1" stroke-dasharray="250" stroke-dashoffset="71.5" '+common+'><circle cx="50" cy="50" r="'+params.rad1+'"></circle></svg><svg class="loady-path-2" stroke-dasharray="200" stroke-dashoffset="105" '+common+'><circle cx="50" cy="50" r="'+params.rad2+'"></circle></svg><svg class="loady-path-3" stroke-dasharray="100" stroke-dashoffset="75" '+common+'><circle cx="50" cy="50" r="'+params.rad3+'"></circle></svg>';
 				break;
 			case 'three-dot':
-				params.radius = settings.size == 'thicc' ? 15 : settings.size == 'thin' ? 5 : 10;
+				params.radius = 8;
 				common += 'fill="'+params.strokeColor+'" stroke="'+params.strokeColor+'"';
-				html = '<svg class="loady-path-1" '+common+'><circle cx="10" cy="50" r="'+params.radius+'"></circle></svg><svg class="loady-path-2" '+common+'><circle cx="50" cy="50" r="'+params.radius+'"></circle></svg><svg class="loady-path-2" '+common+'><circle cx="90" cy="50" r="'+params.radius+'"></circle></svg>'
+				html = '<svg class="loady-path-1" '+common+'><circle cx="13" cy="50" r="'+params.radius+'"></circle></svg><svg class="loady-path-2" '+common+'><circle cx="50" cy="50" r="'+params.radius+'"></circle></svg><svg class="loady-path-2" '+common+'><circle cx="87" cy="50" r="'+params.radius+'"></circle></svg>'
 				break;
 		}
 		element.innerHTML = html;
