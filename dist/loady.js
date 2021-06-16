@@ -1,4 +1,6 @@
-var Loady = function(element, options) {
+(function(global, factory) {
+	global.Loady = factory;
+})(this, function(element, options) {
 	let Loady = this;
 
 	this.display = {
@@ -131,7 +133,7 @@ var Loady = function(element, options) {
 	}
 
 	this.init(element, options);
-};
+});
 
 if ('jQuery' in window && '$' in window)
 	(function ($) {
