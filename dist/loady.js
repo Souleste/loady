@@ -38,7 +38,7 @@ window.Loady = {
 		white: "#ffffff"
 	};
 
-	var Loady = function (element) {
+	var loady = function (element) {
 		var settings = {
 			size: element.getAttribute("data-size") ? element.getAttribute("data-size") : "",
 			duration: element.getAttribute("data-speed") ? element.getAttribute("data-speed") : "1",
@@ -47,7 +47,7 @@ window.Loady = {
 			phColor: element.getAttribute("data-placeholderColor") ? element.getAttribute("data-placeholderColor") : "rgba(0,0,0,0.1)",
 			direction: element.getAttribute("data-dir") ? element.getAttribute("data-dir") : ""
 		};
-		
+
 		element.loadyWidth = element.offsetWidth;
 		element.loadyHeight = element.offsetHeight;
 		var transformOrigin = (element.loadyWidth / 2).toFixed(2) + 'px';
@@ -87,7 +87,7 @@ window.Loady = {
 				break;
 		}
 		element.innerHTML = html;
-		
+
 		/* animate */
 		if (window.navigator.userAgent.indexOf('MSIE') > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) { // if IE
 			switch(settings.animation) {
@@ -108,15 +108,15 @@ window.Loady = {
 				var mutation = mutationsList[idx];
 				if (mutation.type == "attributes") {
 					if (["data-animation", "data-color", "data-dir", "data-size", "data-speed"].indexOf(mutation.attributeName) <= -1 && !((mutation.attributeName == 'style' || mutation.attributeName == 'class') && (element.loadyWidth !== element.offsetWidth || element.loadyHeight !== element.offsetHeight))) return;
-					
+
 					if ((mutation.attributeName == 'style' || mutation.attributeName == 'class') && (element.loadyWidth !== element.offsetWidth || element.loadyHeight !== element.offsetHeight)) {
 						console.log('ehh change');
 						if (element.loadyWidth !== element.offsetWidth) element.loadyWidth = element.offsetWidth;
-						if (element.loadyHeight !== element.offsetHeight) element.loadyHeight = element.offsetHeight; 
+						if (element.loadyHeight !== element.offsetHeight) element.loadyHeight = element.offsetHeight;
 					};
-					
+
 					loadyObserver.disconnect();
-					Loady(element);
+					loady(element);
 				}
 			}
 		});
@@ -124,7 +124,7 @@ window.Loady = {
 	};
 
 	Array.prototype.slice.call(elements).forEach(function (element) {
-		Loady(element);
+		loady(element);
 	});
 
 	/* detect new loady elements */
@@ -136,7 +136,7 @@ window.Loady = {
 					if (o.nodeName == "#text") return;
 					return o.classList.contains("loady");
 				}).forEach(function (o) {
-					Loady(o);
+					loady(o);
 				});
 			}
 		}
