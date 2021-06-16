@@ -12,7 +12,7 @@
 /* duration */
 .loady[data-animation="spin"][data-duration="0.5"] svg.loady-path-1 { animation-duration: 0.5s }
 .loady[data-animation="spin"][data-duration="1"] svg.loady-path-1 { animation-duration: 1s }
-.loady[data-animation="spin"][data-spedurationed="1.5"] svg.loady-path-1 { animation-duration: 1.5s }
+.loady[data-animation="spin"][data-duration="1.5"] svg.loady-path-1 { animation-duration: 1.5s }
 .loady[data-animation="spin"][data-duration="2"] svg.loady-path-1 { animation-duration: 2s }
 .loady[data-animation="spin"][data-duration="2.5"] svg.loady-path-1 { animation-duration: 2.5s }
 .loady[data-animation="spin"][data-duration="3"] svg.loady-path-1 { animation-duration: 3s }
@@ -72,7 +72,6 @@
 		transform: rotate(270deg);
 	}
 }
-
 
 
 /*** LOADY THREE-SPIN ***/
@@ -144,4 +143,78 @@
 }
 @keyframes loady-three-spin-3 {
 	100% { transform: rotate(360deg) }
+}
+
+
+/*** LOADY THREE-DOT ***/
+.loady[data-animation="three-dot"] svg.loady-path-1 {
+	animation-name: loady-three-dot-1;
+	transform-origin: 3px 15px 15px;
+}
+.loady[data-animation="three-dot"] svg.loady-path-2 {
+	animation-name: loady-three-dot-2;
+	transform-origin: 15px 15px 15px;
+}
+.loady[data-animation="three-dot"] svg.loady-path-3 {
+	animation-name: loady-three-dot-3;
+	transform-origin: 25px 15px 15px;
+}
+.loady[data-animation="three-dot"] svg {
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.loady.paused[data-animation="three-dot"] svg.loady-path-1,
+.loady.paused[data-animation="three-dot"] svg.loady-path-2,
+.loady.paused[data-animation="three-dot"] svg.loady-path-3 { animation-play-state: paused }
+
+/* duration */
+.loady[data-animation="three-dot"][data-duration="0.5"] svg.loady-path-1,
+.loady[data-animation="three-dot"][data-duration="0.5"] svg.loady-path-2,
+.loady[data-animation="three-dot"][data-duration="0.5"] svg.loady-path-3 { animation-duration: 0.5s }
+.loady[data-animation="three-dot"][data-duration="0.5"] svg.loady-path-2 { animation-delay: 0.16s }
+.loady[data-animation="three-dot"][data-duration="0.5"] svg.loady-path-3 { animation-delay: 0.32s }
+
+.loady[data-animation="three-dot"][data-duration="1"] svg.loady-path-1,
+.loady[data-animation="three-dot"][data-duration="1"] svg.loady-path-2,
+.loady[data-animation="three-dot"][data-duration="1"] svg.loady-path-3 { animation-duration: 1s }
+.loady[data-animation="three-dot"][data-duration="1"] svg.loady-path-2 { animation-delay: 0.33s }
+.loady[data-animation="three-dot"][data-duration="1"] svg.loady-path-3 { animation-delay: 0.66s }
+
+.loady[data-animation="three-dot"][data-duration="1.5"] svg.loady-path-1,
+.loady[data-animation="three-dot"][data-duration="1.5"] svg.loady-path-2,
+.loady[data-animation="three-dot"][data-duration="1.5"] svg.loady-path-3 { animation-duration: 1.5s }
+.loady[data-animation="three-dot"][data-duration="1.5"] svg.loady-path-2 { animation-delay: 0.5s }
+.loady[data-animation="three-dot"][data-duration="1.5"] svg.loady-path-3 { animation-delay: 1s }
+
+.loady[data-animation="three-dot"][data-duration="2"] svg.loady-path-1,
+.loady[data-animation="three-dot"][data-duration="2"] svg.loady-path-2,
+.loady[data-animation="three-dot"][data-duration="2"] svg.loady-path-3 { animation-duration: 2s }
+.loady[data-animation="three-dot"][data-duration="2"] svg.loady-path-2 { animation-delay: 0.66s }
+.loady[data-animation="three-dot"][data-duration="2"] svg.loady-path-3 { animation-delay: 1.32s }
+
+.loady[data-animation="three-dot"][data-duration="2.5"] svg.loady-path-1,
+.loady[data-animation="three-dot"][data-duration="2.5"] svg.loady-path-2,
+.loady[data-animation="three-dot"][data-duration="2.5"] svg.loady-path-3 { animation-duration: 2.5s }
+.loady[data-animation="three-dot"][data-duration="2.5"] svg.loady-path-2 { animation-delay: 0.83s }
+.loady[data-animation="three-dot"][data-duration="2.5"] svg.loady-path-3 { animation-delay: 1.66s }
+
+.loady[data-animation="three-dot"][data-duration="3"] svg.loady-path-1,
+.loady[data-animation="three-dot"][data-duration="3"] svg.loady-path-2,
+.loady[data-animation="three-dot"][data-duration="3"] svg.loady-path-3 { animation-duration: 3s }
+.loady[data-animation="three-dot"][data-duration="3"] svg.loady-path-2 { animation-delay: 1s }
+.loady[data-animation="three-dot"][data-duration="3"] svg.loady-path-3 { animation-delay: 2s }
+
+/* keyframes */
+@keyframes loady-three-dot-1 {
+	50% { transform: scale(0.1) }
+	100% { transform: scale(1) }
+}
+@keyframes loady-three-dot-2 {
+	50% { transform: scale(0.1) }
+	100% { transform: scale(1) }
+}
+@keyframes loady-three-dot-3 {
+	50% { transform: scale(0.1) }
+	100% { transform: scale(1) }
 }
