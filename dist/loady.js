@@ -1,4 +1,4 @@
-var Loady = {
+window.Loady = {
  	animations: {
 		snake: function (animate, svg) {
 			return window.requestAnimationFrame(function (timestamp) {
