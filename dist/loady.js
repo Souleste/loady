@@ -44,7 +44,7 @@
 		for (let idx in mutationsList) {
 			var mutation = mutationsList[idx];
 			if (mutation.type == 'attributes') {
-				if (['data-animation', 'data-color', 'data-dir', 'data-size', 'data-speed'].indexOf(mutation.attributeName) <= -1 && !((mutation.attributeName == 'style' || mutation.attributeName == 'class') && (element.loadyWidth !== element.offsetWidth || element.loadyHeight !== element.offsetHeight))) return;
+				if (['data-animation', 'data-color', 'data-dir', 'data-size', 'data-duration'].indexOf(mutation.attributeName) <= -1 && !((mutation.attributeName == 'style' || mutation.attributeName == 'class') && (element.loadyWidth !== element.offsetWidth || element.loadyHeight !== element.offsetHeight))) return;
 
 				if ((mutation.attributeName == 'style' || mutation.attributeName == 'class') && (element.loadyWidth !== element.offsetWidth || element.loadyHeight !== element.offsetHeight)) {
 					if (element.loadyWidth !== element.offsetWidth) element.loadyWidth = element.offsetWidth;
@@ -59,7 +59,7 @@
 	this.init = function(element, options) {
 		var settings = {
 			size: element.getAttribute('data-size') ? element.getAttribute('data-size') : '',
-			duration: element.getAttribute('data-speed') ? element.getAttribute('data-speed') : '1',
+			duration: element.getAttribute('data-duration') ? element.getAttribute('data-duration') : '1',
 			animation: element.getAttribute('data-animation') ? element.getAttribute('data-animation') : 'spin',
 			color: element.getAttribute('data-color') ? element.getAttribute('data-color') : 'black',
 			phColor: element.getAttribute('data-placeholderColor') ? element.getAttribute('data-placeholderColor') : 'rgba(0,0,0,0.1)',
@@ -122,7 +122,7 @@
 		element.setAttribute('data-color', settings.color);
 		element.setAttribute('data-dir', settings.dir);
 		element.setAttribute('data-size', settings.size);
-		element.setAttribute('data-speed', settings.duration);
+		element.setAttribute('data-duration', settings.duration);
 
 		/* detect loady attribute change */
 		Loady.watch.observe(element, { attributes: true }); // start observing
