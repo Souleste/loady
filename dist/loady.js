@@ -30,7 +30,8 @@
 				animate.elapsed = timestamp - animate.start;
 
 				var percent = (animate.elapsed / (animate.duration / 2)) * 100;
-				var offset = (((100 - percent) / 100) * 70).toFixed(2);
+				var cir = Math.round(percent) >= 100 ? -70 : 70;
+				var offset = (((100 - percent) / 100) * cir).toFixed(2);
 				svg.setAttribute('stroke-dashoffset', offset);
 
 				if (animate.elapsed >= animate.duration) {
@@ -143,7 +144,16 @@
 		if (window.navigator.userAgent.indexOf('MSIE') > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) { // if IE
 			switch(settings.animation) {
 				case 'snake': Loady.animations.snake({ duration: settings.duration * 1000, elapsed: 0, start: undefined }, element.getElementsByClassName('loady-path-1')[0]); break;
-				case 'three-bars': Loady.animations['three-bars']({ duration: settings.duration * 1000, elapsed: 0, start: undefined }, element.getElementsByClassName('loady-path-1')[0]); break;
+				case 'three-bars': 
+					var third = settings.duration / 3;
+					Loady.animations['three-bars']({ duration: settings.duration * 1000, elapsed: 0, start: undefined }, element.getElementsByClassName('loady-path-1')[0]); 
+					setTimeout(function() {
+						Loady.animations['three-bars']({ duration: settings.duration * 1000, elapsed: 0, start: undefined }, element.getElementsByClassName('loady-path-2')[0]); 
+					}, third.toFixed(2) );
+					setTimeout(function() {
+						Loady.animations['three-bars']({ duration: settings.duration * 1000, elapsed: 0, start: undefined }, element.getElementsByClassName('loady-path-2')[0]); 
+					}, (third * 2).toFixed(2) );
+				break;
 			}
 		}
 
