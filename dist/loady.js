@@ -120,7 +120,7 @@
 				params.x2 = settings.size == 'thicc' ? 41.5 : settings.size == 'thin' ? 47 : 45;
 				params.x3 = settings.size == 'thicc' ? 77 : settings.size == 'thin' ? 80 : 75;
 				common += 'fill="none" stroke="'+params.strokeColor+'" stroke-dasharray="80" stroke-dashoffset="70" style="top: 10px;"';
-				html = '<svg class="loady-path-1" '+common+'><path d="m 0 10 l 0 80"></path></svg><svg class="loady-path-2" '+common+'><path d="m 0 10 l 0 80"></path></svg><svg class="loady-path-3" '+common+'><path d="m 0 10 l 0 80"></path></svg>';
+				html = '<svg class="loady-path-1" '+common+'><path d="m 5 10 l 0 80"></path></svg><svg class="loady-path-2" '+common+'><path d="m 50 10 l 0 80"></path></svg><svg class="loady-path-3" '+common+'><path d="m 90 10 l 0 80"></path></svg>';
 				break;
 		}
 		element.innerHTML = html;
