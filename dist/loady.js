@@ -151,7 +151,7 @@
 						Loady.animations['three-bars']({ duration: settings.duration * 1000, elapsed: 0, start: undefined }, element.getElementsByClassName('loady-path-2')[0]); 
 					}, third.toFixed(2) );
 					setTimeout(function() {
-						Loady.animations['three-bars']({ duration: settings.duration * 1000, elapsed: 0, start: undefined }, element.getElementsByClassName('loady-path-2')[0]); 
+						Loady.animations['three-bars']({ duration: settings.duration * 1000, elapsed: 0, start: undefined }, element.getElementsByClassName('loady-path-3')[0]); 
 					}, (third * 2).toFixed(2) );
 				break;
 			}
