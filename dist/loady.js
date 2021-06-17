@@ -48,8 +48,8 @@
 		for (let idx in mutationsList) {
 			var mutation = mutationsList[idx];
 			if (mutation.type == 'attributes') {
-				var currentWidth = window.getComputedStyle(element)['width'],
-					currentHeight = window.getComputedStyle(element)['height'];
+				var currentWidth = parseInt(window.getComputedStyle(element)['width'].replace(/px/, '')),
+				    currentHeight = parseInt(window.getComputedStyle(element)['height'].replace(/px/, ''));
 				if (['data-animation', 'data-color', 'data-dir', 'data-size', 'data-duration'].indexOf(mutation.attributeName) <= -1 && !((mutation.attributeName == 'style' || mutation.attributeName == 'class') && (element.loadyWidth !== currentWidth || element.loadyHeight !== currentHeight))) return;
 
 				if ((mutation.attributeName == 'style' || mutation.attributeName == 'class') && (element.loadyWidth !== element.offsetWidth || element.loadyHeight !== element.offsetHeight)) {
@@ -76,8 +76,8 @@
 			settings[name] = options[name];
 		}
 
-		element.loadyWidth = window.getComputedStyle(element)['width'];
-		element.loadyHeight = window.getComputedStyle(element)['height'];
+		element.loadyWidth = parseInt(window.getComputedStyle(element)['width'].replace(/px/, ''));
+		element.loadyHeight = parseInt(window.getComputedStyle(element)['height'].replace(/px/, ''));
 		var transformOrigin = (element.loadyWidth / 2).toFixed(2) + 'px';
 
 		var html = '';
