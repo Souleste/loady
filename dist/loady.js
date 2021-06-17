@@ -116,9 +116,9 @@
 				break;
 			case 'three-bars':
 				params.radius = 5;
-				params.x1 = settings.size == 'thicc' ? 5 : settings.size == 'thin' ? 15 : 15;
-				params.x2 = settings.size == 'thicc' ? 43 : settings.size == 'thin' ? 47 : 45;
-				params.x3 = settings.size == 'thicc' ? 80 : settings.size == 'thin' ? 80 : 75;
+				params.x1 = settings.size == 'thicc' ? 7 : settings.size == 'thin' ? 15 : 15;
+				params.x2 = settings.size == 'thicc' ? 41.5 : settings.size == 'thin' ? 47 : 45;
+				params.x3 = settings.size == 'thicc' ? 77 : settings.size == 'thin' ? 80 : 75;
 				common += 'fill="'+params.strokeColor+'" stroke="'+params.strokeColor+'"';
 				html = '<svg class="loady-path-1" '+common+'><rect width="'+params.strokeWidth+'" height="25" x="'+params.x1+'" y="35" rx="5" ry="5"></rect></svg><svg class="loady-path-2" '+common+'><rect width="'+params.strokeWidth+'" height="25" x="'+params.x2+'" y="35" rx="5" ry="5"></rect></svg><svg class="loady-path-3" '+common+'><rect width="'+params.strokeWidth+'" height="25" x="'+params.x3+'" y="35" rx="5" ry="5"></rect></svg>';
 				break;
