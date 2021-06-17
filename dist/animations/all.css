@@ -224,7 +224,7 @@
 	animation-name: loady-three-bars;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
-	transform: translate(0, 0);
+	transform: translate(0, 10px);
 }
 
 .loady.paused[data-animation="three-bars"] svg.loady-path-1,
@@ -235,8 +235,8 @@
 .loady[data-animation="three-bars"][data-duration="0.5"] svg.loady-path-1,
 .loady[data-animation="three-bars"][data-duration="0.5"] svg.loady-path-2,
 .loady[data-animation="three-bars"][data-duration="0.5"] svg.loady-path-3 { animation-duration: 0.5s }
-.loady[data-animation="three-bars"][data-duration="0.5"] svg.loady-path-2 {	animation-delay: 0.16s }
-.loady[data-animation="three-bars"][data-duration="0.5"] svg.loady-path-3 {	animation-delay: 0.32s }
+.loady[data-animation="three-bars"][data-duration="0.5"] svg.loady-path-2 { animation-delay: 0.16s }
+.loady[data-animation="three-bars"][data-duration="0.5"] svg.loady-path-3 { animation-delay: 0.32s }
 
 .loady[data-animation="three-bars"][data-duration="1"] svg.loady-path-1,
 .loady[data-animation="three-bars"][data-duration="1"] svg.loady-path-2,
@@ -248,7 +248,7 @@
 .loady[data-animation="three-bars"][data-duration="1.5"] svg.loady-path-2,
 .loady[data-animation="three-bars"][data-duration="1.5"] svg.loady-path-3 { animation-duration: 1.5s }
 .loady[data-animation="three-bars"][data-duration="1.5"] svg.loady-path-2 { animation-delay: 0.5s }
-.loady[data-animation="three-bars"][data-duration="1.5"] svg.loady-path-3 {	animation-delay: 1s }
+.loady[data-animation="three-bars"][data-duration="1.5"] svg.loady-path-3 { animation-delay: 1s }
 
 .loady[data-animation="three-bars"][data-duration="2"] svg.loady-path-1,
 .loady[data-animation="three-bars"][data-duration="2"] svg.loady-path-2,
@@ -259,8 +259,8 @@
 .loady[data-animation="three-bars"][data-duration="2.5"] svg.loady-path-1,
 .loady[data-animation="three-bars"][data-duration="2.5"] svg.loady-path-2,
 .loady[data-animation="three-bars"][data-duration="2.5"] svg.loady-path-3 { animation-duration: 2.5s }
-.loady[data-animation="three-bars"][data-duration="2.5"] svg.loady-path-2 {	animation-delay: 0.83s }
-.loady[data-animation="three-bars"][data-duration="2.5"] svg.loady-path-3 {	animation-delay: 1.66s }
+.loady[data-animation="three-bars"][data-duration="2.5"] svg.loady-path-2 { animation-delay: 0.83s }
+.loady[data-animation="three-bars"][data-duration="2.5"] svg.loady-path-3 { animation-delay: 1.66s }
 
 .loady[data-animation="three-bars"][data-duration="3"] svg.loady-path-1,
 .loady[data-animation="three-bars"][data-duration="3"] svg.loady-path-2,
@@ -272,10 +272,11 @@
 @keyframes loady-three-bars {
 	50% {
 		stroke-dashoffset: 0;
-		transform: translate(0, -10px);
+		transform: translate(0, 0);
 	}
 	100% {
-		stroke-dashoffset: -70px;
-		transform: translate(0, -20px);
+		stroke-dashoffset: 70px;
+		transform: translate(0, 10px);
 	}
 }
+
