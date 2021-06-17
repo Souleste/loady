@@ -120,7 +120,7 @@
 				params.x2 = settings.size == 'thicc' ? 43 : settings.size == 'thin' ? 47 : 45;
 				params.x3 = settings.size == 'thicc' ? 80 : settings.size == 'thin' ? 80 : 75;
 				common += 'fill="'+params.strokeColor+'" stroke="'+params.strokeColor+'"';
-				html = '<svg class="loady-path-1" '+common+'><rect width="'+params.strokeWidth+'" height="33" x="'+params.x1+'" y="35" rx="5" ry="5"></rect></svg><svg class="loady-path-2" '+common+'><rect width="'+params.strokeWidth+'" height="33" x="'+params.x2+'" y="35" rx="5" ry="5"></rect></svg><svg class="loady-path-3" '+common+'><rect width="'+params.strokeWidth+'" height="33" x="'+params.x3+'" y="35" rx="5" ry="5"></rect></svg>';
+				html = '<svg class="loady-path-1" '+common+'><rect width="'+params.strokeWidth+'" height="25" x="'+params.x1+'" y="35" rx="5" ry="5"></rect></svg><svg class="loady-path-2" '+common+'><rect width="'+params.strokeWidth+'" height="25" x="'+params.x2+'" y="35" rx="5" ry="5"></rect></svg><svg class="loady-path-3" '+common+'><rect width="'+params.strokeWidth+'" height="25" x="'+params.x3+'" y="35" rx="5" ry="5"></rect></svg>';
 				break;
 		}
 		element.innerHTML = html;
