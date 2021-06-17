@@ -4,6 +4,10 @@
 	if (element.Loady) element.Loady.watch.disconnect();
 
 	let Loady = this;
+	
+	var isIE = function() {
+		return window.navigator.userAgent.indexOf('MSIE') > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./);
+	};
 
 	this.animations = {
 		snake: function (animate, svg) {
@@ -136,24 +140,15 @@
 				params.x3 = settings.size == 'thicc' ? 90 : settings.size == 'thin' ? 85 : 90;
 				common += 'fill="none" stroke="'+params.strokeColor+'" stroke-dasharray="80" stroke-dashoffset="70"';
 				html = '<svg class="loady-path-1" '+common+'><path d="m '+params.x1+' 10 l 0 80"></path></svg><svg class="loady-path-2" '+common+'><path d="m '+params.x2+' 10 l 0 80"></path></svg><svg class="loady-path-3" '+common+'><path d="m '+params.x3+' 10 l 0 80"></path></svg>';
+				if (isIE()) html = ''; // insert gif fallback for IE.
 				break;
 		}
 		element.innerHTML = html;
 
 		/* animate */
-		if (window.navigator.userAgent.indexOf('MSIE') > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) { // if IE
+		if (isIE()) { // if IE
 			switch(settings.animation) {
 				case 'snake': Loady.animations.snake({ duration: settings.duration * 1000, elapsed: 0, start: undefined }, element.getElementsByClassName('loady-path-1')[0]); break;
-				case 'three-bars': 
-					var third = settings.duration / 3;
-					Loady.animations['three-bars']({ duration: settings.duration * 1000, elapsed: 0, start: undefined }, element.getElementsByClassName('loady-path-1')[0]); 
-					setTimeout(function() {
-						Loady.animations['three-bars']({ duration: settings.duration * 1000, elapsed: 0, start: undefined }, element.getElementsByClassName('loady-path-2')[0]); 
-					}, third.toFixed(2) );
-					setTimeout(function() {
-						Loady.animations['three-bars']({ duration: settings.duration * 1000, elapsed: 0, start: undefined }, element.getElementsByClassName('loady-path-3')[0]); 
-					}, (third * 2).toFixed(2) );
-				break;
 			}
 		}
 
