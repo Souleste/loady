@@ -20,12 +20,26 @@
 				if (animate.elapsed >= animate.duration) {
 					animate.elapsed = 0;
 					animate.start = undefined;
-					Loady.animations.snake(animate, svg);
-				} else {
-					Loady.animations.snake(animate, svg);
 				}
+				Loady.animations.snake(animate, svg);
 			});
-		}
+		},
+		'three-bars': function (animate, svg) {
+			return window.requestAnimationFrame(function (timestamp) {
+				if (animate.start == undefined) animate.start = timestamp;
+				animate.elapsed = timestamp - animate.start;
+
+				var percent = (animate.elapsed / (animate.duration / 2)) * 100;
+				var offset = (((100 - percent) / 100) * 70).toFixed(2);
+				svg.setAttribute('stroke-dashoffset', offset);
+
+				if (animate.elapsed >= animate.duration) {
+					animate.elapsed = 0;
+					animate.start = undefined;
+				}
+				Loady.animations['three-bars'](animate, svg);
+			});
+		},
 	}
 	this.colors = {
 		primary: '#34495e',
@@ -119,7 +133,7 @@
 				params.x1 = settings.size == 'thicc' ? 15 : settings.size == 'thin' ? 15 : 5;
 				params.x2 = settings.size == 'thicc' ? 53 : settings.size == 'thin' ? 50 : 47;
 				params.x3 = settings.size == 'thicc' ? 90 : settings.size == 'thin' ? 85 : 90;
-				common += 'fill="none" stroke="'+params.strokeColor+'" stroke-dasharray="80" stroke-dashoffset="70" style="top: 10px;"';
+				common += 'fill="none" stroke="'+params.strokeColor+'" stroke-dasharray="80" stroke-dashoffset="70"';
 				html = '<svg class="loady-path-1" '+common+'><path d="m '+params.x1+' 10 l 0 80"></path></svg><svg class="loady-path-2" '+common+'><path d="m '+params.x2+' 10 l 0 80"></path></svg><svg class="loady-path-3" '+common+'><path d="m '+params.x3+' 10 l 0 80"></path></svg>';
 				break;
 		}
@@ -129,6 +143,7 @@
 		if (window.navigator.userAgent.indexOf('MSIE') > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) { // if IE
 			switch(settings.animation) {
 				case 'snake': Loady.animations.snake({ duration: settings.duration * 1000, elapsed: 0, start: undefined }, element.getElementsByClassName('loady-path-1')[0]); break;
+				case 'three-bars': Loady.animations['three-bars']({ duration: settings.duration * 1000, elapsed: 0, start: undefined }, element.getElementsByClassName('loady-path-1')[0]); break;
 			}
 		}
 
