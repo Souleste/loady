@@ -218,3 +218,126 @@
 	50% { transform: scale(0.1) }
 	100% { transform: scale(1) }
 }
+
+/*** LOADY THREE-BARS ***/
+.loady[data-animation="three-bars"] svg.loady-path-1 rect {
+	animation-name: loady-three-bars-1;
+}
+.loady[data-animation="three-bars"] svg.loady-path-2 rect {
+	animation-name: loady-three-bars-2;
+}
+.loady[data-animation="three-bars"] svg.loady-path-3 rect {
+	animation-name: loady-three-bars-3;
+}
+.loady[data-animation="three-bars"] svg rect {
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.loady.paused[data-animation="three-bars"] svg.loady-path-1 rect,
+.loady.paused[data-animation="three-bars"] svg.loady-path-2 rect,
+.loady.paused[data-animation="three-bars"] svg.loady-path-3 rect {
+	animation-play-state: paused;
+}
+
+/* duration */
+.loady[data-animation="three-bars"][data-duration="0.5"] svg.loady-path-1 rect,
+.loady[data-animation="three-bars"][data-duration="0.5"] svg.loady-path-2 rect,
+.loady[data-animation="three-bars"][data-duration="0.5"] svg.loady-path-3 rect {
+	animation-duration: 0.5s;
+}
+.loady[data-animation="three-bars"][data-duration="0.5"] svg.loady-path-2 rect {
+	animation-delay: 0.16s;
+}
+.loady[data-animation="three-bars"][data-duration="0.5"] svg.loady-path-3 rect {
+	animation-delay: 0.32s;
+}
+
+.loady[data-animation="three-bars"][data-duration="1"] svg.loady-path-1 rect,
+.loady[data-animation="three-bars"][data-duration="1"] svg.loady-path-2 rect,
+.loady[data-animation="three-bars"][data-duration="1"] svg.loady-path-3 rect {
+	animation-duration: 1s;
+}
+.loady[data-animation="three-bars"][data-duration="1"] svg.loady-path-2 rect {
+	animation-delay: 0.33s;
+}
+.loady[data-animation="three-bars"][data-duration="1"] svg.loady-path-3 rect {
+	animation-delay: 0.66s;
+}
+
+.loady[data-animation="three-bars"][data-duration="1.5"] svg.loady-path-1 rect,
+.loady[data-animation="three-bars"][data-duration="1.5"] svg.loady-path-2 rect,
+.loady[data-animation="three-bars"][data-duration="1.5"] svg.loady-path-3 rect {
+	animation-duration: 1.5s;
+}
+.loady[data-animation="three-bars"][data-duration="1.5"] svg.loady-path-2 rect {
+	animation-delay: 0.5s;
+}
+.loady[data-animation="three-bars"][data-duration="1.5"] svg.loady-path-3 rect {
+	animation-delay: 1s;
+}
+
+.loady[data-animation="three-bars"][data-duration="2"] svg.loady-path-1 rect,
+.loady[data-animation="three-bars"][data-duration="2"] svg.loady-path-2 rect,
+.loady[data-animation="three-bars"][data-duration="2"] svg.loady-path-3 rect {
+	animation-duration: 2s;
+}
+.loady[data-animation="three-bars"][data-duration="2"] svg.loady-path-2 rect {
+	animation-delay: 0.66s;
+}
+.loady[data-animation="three-bars"][data-duration="2"] svg.loady-path-3 rect {
+	animation-delay: 1.32s;
+}
+
+.loady[data-animation="three-bars"][data-duration="2.5"] svg.loady-path-1 rect,
+.loady[data-animation="three-bars"][data-duration="2.5"] svg.loady-path-2 rect,
+.loady[data-animation="three-bars"][data-duration="2.5"] svg.loady-path-3 rect {
+	animation-duration: 2.5s;
+}
+.loady[data-animation="three-bars"][data-duration="2.5"] svg.loady-path-2 rect {
+	animation-delay: 0.83s;
+}
+.loady[data-animation="three-bars"][data-duration="2.5"] svg.loady-path-3 rect {
+	animation-delay: 1.66s;
+}
+
+.loady[data-animation="three-bars"][data-duration="3"] svg.loady-path-1 rect,
+.loady[data-animation="three-bars"][data-duration="3"] svg.loady-path-2 rect,
+.loady[data-animation="three-bars"][data-duration="3"] svg.loady-path-3 rect {
+	animation-duration: 3s;
+}
+.loady[data-animation="three-bars"][data-duration="3"] svg.loady-path-2 rect {
+	animation-delay: 1s;
+}
+.loady[data-animation="three-bars"][data-duration="3"] svg.loady-path-3 rect {
+	animation-delay: 2s;
+}
+
+/* keyframes */
+@keyframes loady-three-bars-1 {
+	50% {
+		height: 90px;
+		y: 5;
+	}
+	100% {
+		height: 25px;
+	}
+}
+@keyframes loady-three-bars-2 {
+	50% {
+		height: 90px;
+		y: 5;
+	}
+	100% {
+		height: 25px;
+	}
+}
+@keyframes loady-three-bars-3 {
+	50% {
+		height: 90px;
+		y: 5;
+	}
+	100% {
+		height: 25px;
+	}
+}
