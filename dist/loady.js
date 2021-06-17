@@ -119,21 +119,16 @@
 				params.x1 = settings.size == 'thicc' ? 7 : settings.size == 'thin' ? 15 : 15;
 				params.x2 = settings.size == 'thicc' ? 41.5 : settings.size == 'thin' ? 47 : 45;
 				params.x3 = settings.size == 'thicc' ? 77 : settings.size == 'thin' ? 80 : 75;
-				common += 'fill="'+params.strokeColor+'" stroke="'+params.strokeColor+'"';
-				html = '<svg class="loady-path-1" '+common+'><rect width="'+params.strokeWidth+'" height="25" x="'+params.x1+'" y="35" rx="5" ry="5"></rect></svg><svg class="loady-path-2" '+common+'><rect width="'+params.strokeWidth+'" height="25" x="'+params.x2+'" y="35" rx="5" ry="5"></rect></svg><svg class="loady-path-3" '+common+'><rect width="'+params.strokeWidth+'" height="25" x="'+params.x3+'" y="35" rx="5" ry="5"></rect></svg>';
+				common += 'fill="none" stroke="'+params.strokeColor+'"';
+				html = '<svg class="loady-path-1" '+common+'><path d="m 0 10 l 0 80"></path></svg><svg class="loady-path-2" '+common+'><path d="m 0 10 l 0 80"></path></svg><svg class="loady-path-3" '+common+'><path d="m 0 10 l 0 80"></path></svg>';
 				break;
 		}
 		element.innerHTML = html;
 
 		/* animate */
 		if (window.navigator.userAgent.indexOf('MSIE') > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) { // if IE
-			var animate = {
-				duration: settings.duration * 1000,
-				elapsed: 0,
-				start: undefined,
-			};
 			switch(settings.animation) {
-				case 'snake': Loady.animations.snake(animate, element.getElementsByClassName('loady-path-1')[0]); break;
+				case 'snake': Loady.animations.snake({ duration: settings.duration * 1000, elapsed: 0, start: undefined }, element.getElementsByClassName('loady-path-1')[0]); break;
 			}
 		}
 
