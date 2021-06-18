@@ -141,7 +141,7 @@
 // 				common += 'fill="none" stroke="'+params.strokeColor+'" stroke-dasharray="80" stroke-dashoffset="70"';
 // 				html = '<svg class="loady-path-1" '+common+'><path d="m '+params.x1+' 10 l 0 80"></path></svg><svg class="loady-path-2" '+common+'><path d="m '+params.x2+' 10 l 0 80"></path></svg><svg class="loady-path-3" '+common+'><path d="m '+params.x3+' 10 l 0 80"></path></svg>';
 // 				if (isIE()) { 
-					var w = (element.loadyWidth / 100) * settings.strokeWidth;
+					var w = (element.loadyWidth / 100) * params.strokeWidth;
 					var h = (element.loadyWidth / 100) * 10;
 					common = 'style="width: '+w+'px; height: '+h+'px;"';
 					html = '<span class="loady-path-1" '+common+'></span><span class="loady-path-1" '+common+'></span><span class="loady-path-1" '+common+'></span>';
