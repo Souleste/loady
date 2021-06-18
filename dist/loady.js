@@ -140,7 +140,12 @@
 				params.x3 = settings.size == 'thicc' ? 90 : settings.size == 'thin' ? 85 : 90;
 				common += 'fill="none" stroke="'+params.strokeColor+'" stroke-dasharray="80" stroke-dashoffset="70"';
 				html = '<svg class="loady-path-1" '+common+'><path d="m '+params.x1+' 10 l 0 80"></path></svg><svg class="loady-path-2" '+common+'><path d="m '+params.x2+' 10 l 0 80"></path></svg><svg class="loady-path-3" '+common+'><path d="m '+params.x3+' 10 l 0 80"></path></svg>';
-				if (isIE()) html = ''; // insert gif fallback for IE.
+				if (isIE()) { 
+					var w = (element.loadyWidth / 100) * settings.strokeWidth;
+					var h = w * 10;
+					common = 'style="width: '+w+'px; height: '+h+'px;"';
+					html = '<span class="loady-path-1" '+common+'></span><span class="loady-path-1" '+common+'></span><span class="loady-path-1" '+common+'></span>';
+			    	}
 				break;
 		}
 		element.innerHTML = html;
@@ -158,6 +163,7 @@
 		element.setAttribute('data-dir', settings.dir);
 		element.setAttribute('data-size', settings.size);
 		element.setAttribute('data-duration', settings.duration);
+		element.setAttribute('data-dir', settings.direction);
 
 		/* detect loady attribute change */
 		Loady.watch.observe(element, { attributes: true }); // start observing
